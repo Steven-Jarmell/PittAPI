@@ -65,9 +65,17 @@ two = dining.get_location_by_name("cup_&_chaucer-hillman")
 ```
 
 ## Local Setup
-Install Python 3.12 and ``pipenv``.  
-  
-Run ``pipenv install`` and ``pipenv shell`` to create and setup the virtual environment.  
+
+### Prerequisites
+- Install Python **3.12**  
+
+### Steps  
+1. Run `python --version` to ensure you are working with Python 3.12.  
+2. Run `python -m venv env` to create the virtual environment.  
+3. Activate the virtual environment according to your host OS. You should see `(env)` on the very left of your terminal. 
+- Windows: `./env/Scripts/activate`
+- MacOS/Linux: `source venv/bin/activate`
+4. Install dependencies with `pip install -r requirements.txt`
 
 ## Tests
 
