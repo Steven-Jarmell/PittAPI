@@ -86,5 +86,5 @@ license <LICENSE>`__.
    :target: https://travis-ci.org/Pitt-CSC/PittAPI
 .. |License GPLv2| image:: https://img.shields.io/badge/license-GPLv2-blue.svg
    :target: LICENSE
-.. |Python >= 3.6| image:: https://img.shields.io/badge/python-%3E%3D%203.6-green
+.. |Python >= 3.6| image:: https://img.shields.io/badge/python-%3E%3D%203.6-green.svg
 
