@@ -21,71 +21,28 @@ import unittest
 import responses
 
 from pittapi import lab
-
-TEST_DATA = ('<span>Alumni Lab is currently closed.  Benedum Lab is currently closed.  Cathedral G27 Lab is currently '
-             'closed.  Cathedral G62 Lab is open: 35 Windows, 15 Mac, 2 Linux  David Lawrence Lab is open: 35 Windows, 1 Mac, 2 Linux  '
-             'Hillman Lab is open: 52 Windows, 0 Macs, 2 Linux  Sutherland Lab is currently closed.</span>')
+from tests.mocks.lab_mocks import mock_all_ids_data
 
 
 class LabTest(unittest.TestCase):
     @responses.activate
-    def test_get_status_alumni(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("ALUMNI")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
+    def test_get_all_lab_ids(self):
+        responses.add(
+            responses.GET,
+            lab.PITT_BASE_URL + "avail.json",
+            json=mock_all_ids_data,
+            status=200,
+        )
+        
+        results = lab._fetch_all_lab_ids()
+        self.assertIsInstance(results, list)
 
-    @responses.activate
-    def test_get_status_benedum(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("BENEDUM")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_get_status_cathg27(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("CATH_G27")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_get_status_cathg62(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("CATH_G62")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_get_status_lawrence(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("LAWRENCE")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_get_status_hillman(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("HILLMAN")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_get_status_sutherland(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        results = lab.get_status("SUTH")
-        self.assertIsInstance(results, dict)
-        self.assertTrue("status" in results.keys())
-
-    @responses.activate
-    def test_fetch_labs(self):
-        responses.add(responses.GET, lab.URL,
-                      body=TEST_DATA, status=200)
-        self.assertIsInstance(lab._fetch_labs(), list)
+        EXPECTED_LIST = [
+            "bba4a8796295ff6a8df116524b40e178",
+            "98a4759fc02ca3655d56cd58abed4e90",
+            "8adaaeb974aa38b2283c73532c095ca7",
+            "6fd5a4e0dd0a32e3ccb441e25a1a2d78",
+            "25d1bfa80cafb622994b7d06c63011f2",
+            "04853e8d1453c90a910a0b803529a3a0",
+        ]
+        self.assertListEqual(results, EXPECTED_LIST, "List of Lab Ids did not match")

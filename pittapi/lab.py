@@ -18,43 +18,43 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 """
 
 from typing import List, NamedTuple
+import requests
 
-from requests_html import HTMLSession
-from parse import compile
+# Need to make unverified requests to Pitt endpoint
+import urllib3
+urllib3.disable_warnings()
 
-URL = "http://labinformation.cssd.pitt.edu/"
-
-LAB_OPEN_PATTERN = compile(
-    "{name} Lab is {status}: {windows:d} Windows, {macs:d} Macs, {linux:d} Linux"
-)
-LAB_CLOSED_PATTERN = compile("{name} Lab is currently {status}")
-
+PITT_BASE_URL = "https://pitt-keyserve-prod.univ.pitt.edu/maps/std/"
 
 class Lab(NamedTuple):
     name: str
     status: str
-    windows: int
-    mac: int
-    linux: int
+    available_computers: int
+    total_computers: int
 
+def _fetch_all_lab_ids() -> List[str]:
+    """Fetches the id for all labs."""
+    res = requests.get(PITT_BASE_URL + 'avail.json', verify=False).json()
+    labs_info = res["results"]["maps"]
 
-def _fetch_labs() -> List[str]:
+    lab_ids = []
+    for lab in labs_info:
+        lab_ids.append(lab["ident"])
+
+    return lab_ids
+
+def _fetch_lab_data(id: str) -> List[str]:
+    """Fetches text of status/machines of a single labs."""
+    pass
+
+def _fetch_all_lab_data() -> List[str]:
     """Fetches text of status/machines of all labs."""
-    session = HTMLSession()
-    resp = session.get(URL)
-    data = resp.html.find("#lblTextMsg", first=True)
-    return data.full_text.strip().split("  ")
+    pass
 
+def get_one_lab_status() -> List[Lab]:
+    """Returns a dictionary with status and amount of OS machines for one lab."""
+    pass
 
-def get_status() -> List[Lab]:
-    """Returns a dictionary with status and amount of OS machines."""
-    labs = []
-    for lab_data in _fetch_labs():
-        if "open" in lab_data:
-            content = LAB_OPEN_PATTERN.parse(lab_data)
-            computing_lab = Lab(**content.named)
-        else:
-            content = LAB_CLOSED_PATTERN.parse(lab_data)
-            computing_lab = Lab(**content.named, windows=0, mac=0, linux=0)
-        labs.append(computing_lab)
-    return labs
+def get_all_labs_status() -> List[Lab]:
+    """Returns a dictionary with status and amount of OS machines for all labs."""
+    pass
