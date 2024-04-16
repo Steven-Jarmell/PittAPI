@@ -19,6 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 from typing import List, NamedTuple
 import requests
+from urllib.error import HTTPError
 
 # Suppress ssl warning
 import urllib3
@@ -49,6 +50,13 @@ class Lab(NamedTuple):
     total_computers: int
 
 
+class LabAPIError(Exception):
+    """Raised when an error occurs while accessing the Lab API."""
+
+    def __init__(self, message):
+        super().__init__(message)
+
+
 def get_one_lab_data(lab_name: str) -> Lab:
     """Fetches text of status/machines of a single lab.
 
@@ -77,9 +85,21 @@ def get_one_lab_data(lab_name: str) -> Lab:
             f"Invalid lab name: {lab_name}. Valid options: {', '.join(valid_lab_names)}"
         )
 
-    lab_data = requests.get(
-        PITT_BASE_URL + AVAIL_LAB_ID_MAP[lab_name] + "/status.json", verify=False
-    ).json()
+    req = requests.get(
+        PITT_BASE_URL + AVAIL_LAB_ID_MAP[lab_name] + "/status.json?noredir=1",
+        verify=False,
+    )
+
+    if req.status_code == 404:
+        raise LabAPIError(
+            "The Lab ID was invalid. Please open a GitHub issue so we can resolve this."
+        )
+    elif req.status_code != 200:
+        raise LabAPIError(
+            f"An unexpected error occurred while fetching lab data: {req.text}"
+        )
+    else:
+        lab_data = req.json()
 
     # Ugly way to retrieve name, but it doesn't use another network request
     name = list(lab_data["hours"].keys())[0]

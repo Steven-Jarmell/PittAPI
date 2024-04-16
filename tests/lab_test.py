@@ -19,30 +19,211 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 import unittest
 import responses
+import pytest
 
 from pittapi import lab
-from tests.mocks.lab_mocks import mock_all_ids_data
+import tests.mocks.lab_mocks as lab_mocks
+
+
+def create_test_url(lab_name: str) -> str:
+    return lab.PITT_BASE_URL + lab.AVAIL_LAB_ID_MAP[lab_name] + "/status.json?noredir=1"
 
 
 class LabTest(unittest.TestCase):
     @responses.activate
-    def test_get_all_lab_ids(self):
+    def test_get_status_bellefield(self):
         responses.add(
             responses.GET,
-            lab.PITT_BASE_URL + "avail.json",
-            json=mock_all_ids_data,
-            status=200,
+            create_test_url("BELLEFIELD"),
+            json=lab_mocks.mocked_bellefield_data,
         )
-        
-        results = lab._fetch_all_lab_ids()
-        self.assertIsInstance(results, list)
 
-        EXPECTED_LIST = [
-            "bba4a8796295ff6a8df116524b40e178",
-            "98a4759fc02ca3655d56cd58abed4e90",
-            "8adaaeb974aa38b2283c73532c095ca7",
-            "6fd5a4e0dd0a32e3ccb441e25a1a2d78",
-            "25d1bfa80cafb622994b7d06c63011f2",
-            "04853e8d1453c90a910a0b803529a3a0",
-        ]
-        self.assertListEqual(results, EXPECTED_LIST, "List of Lab Ids did not match")
+        results = lab.get_one_lab_data("BELLEFIELD")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "Bellefield 314")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 29)
+        self.assertEqual(results.off_computers, 1)
+        self.assertEqual(results.in_use_computers, 0)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 30)
+
+    @responses.activate
+    def test_get_status_lawrence(self):
+        responses.add(
+            responses.GET,
+            create_test_url("LAWRENCE"),
+            json=lab_mocks.mocked_lawrence_data,
+        )
+
+        results = lab.get_one_lab_data("LAWRENCE")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "David Lawrence 230")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 25)
+        self.assertEqual(results.off_computers, 10)
+        self.assertEqual(results.in_use_computers, 5)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 40)
+
+    @responses.activate
+    def test_get_status_sutherland(self):
+        responses.add(
+            responses.GET,
+            create_test_url("SUTH"),
+            json=lab_mocks.mocked_sutherland_data,
+        )
+
+        results = lab.get_one_lab_data("SUTH")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "Sutherland 120")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 11)
+        self.assertEqual(results.off_computers, 1)
+        self.assertEqual(results.in_use_computers, 0)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 12)
+
+    @responses.activate
+    def test_get_status_cathg27(self):
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G27"),
+            json=lab_mocks.mocked_cathy_g27_data,
+        )
+
+        results = lab.get_one_lab_data("CATH_G27")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "Cathedral G27")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 16)
+        self.assertEqual(results.off_computers, 3)
+        self.assertEqual(results.in_use_computers, 11)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 30)
+
+    @responses.activate
+    def test_get_status_cathg62(self):
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G62"),
+            json=lab_mocks.mocked_cathy_g62_data,
+        )
+
+        results = lab.get_one_lab_data("CATH_G62")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "Cathedral G62")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 26)
+        self.assertEqual(results.off_computers, 5)
+        self.assertEqual(results.in_use_computers, 0)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 31)
+
+    @responses.activate
+    def test_get_status_benedum(self):
+        responses.add(
+            responses.GET,
+            create_test_url("BENEDUM"),
+            json=lab_mocks.mocked_benedum_data,
+        )
+
+        results = lab.get_one_lab_data("BENEDUM")
+
+        self.assertIsInstance(results, lab.Lab)
+
+        self.assertEqual(results.name, "Benedum B06")
+        self.assertEqual(results.status, False)
+        self.assertEqual(results.available_computers, 28)
+        self.assertEqual(results.off_computers, 7)
+        self.assertEqual(results.in_use_computers, 4)
+        self.assertEqual(results.out_of_service_computers, 0)
+        self.assertEqual(results.total_computers, 39)
+
+    @responses.activate
+    def test_get_all_lab_data(self):
+        responses.add(
+            responses.GET,
+            create_test_url("BELLEFIELD"),
+            json=lab_mocks.mocked_bellefield_data,
+        )
+        responses.add(
+            responses.GET,
+            create_test_url("LAWRENCE"),
+            json=lab_mocks.mocked_lawrence_data,
+        )
+        responses.add(
+            responses.GET,
+            create_test_url("SUTH"),
+            json=lab_mocks.mocked_sutherland_data,
+        )
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G27"),
+            json=lab_mocks.mocked_cathy_g27_data,
+        )
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G62"),
+            json=lab_mocks.mocked_cathy_g62_data,
+        )
+        responses.add(
+            responses.GET,
+            create_test_url("BENEDUM"),
+            json=lab_mocks.mocked_benedum_data,
+        )
+
+        results = lab.get_all_labs_data()
+
+        self.assertIsInstance(results, list)
+        self.assertEqual(len(results), 6)
+
+        for item in results:
+            self.assertIsInstance(item, lab.Lab)
+
+    def test_invalid_lab_name(self):
+        with pytest.raises(
+            ValueError,
+            match="Invalid lab name: INVALID. Valid options: BELLEFIELD, LAWRENCE, SUTH, CATH_G27, CATH_G62, BENEDUM",
+        ):
+            lab.get_one_lab_data("INVALID")
+
+    @responses.activate
+    def test_handle_invalid_lab_id(self):
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G27"),
+            body="Resource not found",
+            status=404,
+        )
+
+        with pytest.raises(
+            lab.LabAPIError,
+            match="The Lab ID was invalid. Please open a GitHub issue so we can resolve this.",
+        ):
+            lab.get_one_lab_data("CATH_G27")
+
+    @responses.activate
+    def test_handle_unexpected_fetch_err(self):
+        responses.add(
+            responses.GET,
+            create_test_url("CATH_G27"),
+            body="Unauthorized",
+            status=401,
+        )
+
+        with pytest.raises(
+            lab.LabAPIError,
+            match="An unexpected error occurred while fetching lab data: Unauthorized",
+        ):
+            lab.get_one_lab_data("CATH_G27")
