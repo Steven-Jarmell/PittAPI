@@ -18,19 +18,23 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 """
 
 import unittest
+import pytest
 
 from pittapi import library
 
-@unittest.skip
 class LibraryTest(unittest.TestCase):
     def test_get_documents(self):
         self.assertIsInstance(library.get_documents("water"), dict)
 
+
+    @pytest.mark.skip(reason="bookmarks seem to not be supported in new API anymore")
     def test_get_document_by_bookmark(self):
         bookmark_test = library.get_document_by_bookmark("ePnHCXMw42LgT" +
             "QStzc4rAe_hSmEGbaYyt7QAHThpwMYgouGcGJDo6hSkCezyGQI7SJYmZgacDKzhQ" +
             "LXAWkDazTXE2UMXdOZRPHT8Ih50Ha6hBehic_yyKlhkYVM48RbmFiamxibGAFlyLRc")
         self.assertIsInstance(bookmark_test, dict)
 
+
+    @pytest.mark.skip(reason="bookmarks seem to not be supported in new API anymore")
     def test_invalid_bookmark(self):
-        self.assertRaises(ValueError, library.get_document_by_bookmark, "abcd")
+        self.assertRaises(ValueError, library.get_document_by_bookmark("abcd"))
