@@ -21,7 +21,14 @@ import requests
 from html.parser import HTMLParser
 from typing import Any, Dict, List
 
-LIBRARY_URL = "http://pitt.summon.serialssolutions.com/api/search"
+LIBRARY_URL = """https://pitt.primo.exlibrisgroup.com/primaws/rest/pub/pnxs?acTriggered=false&blendFac
+etsSeparately=false&citationTrailFilterByAvailability=true&disableCache=false&getMore=0&inst=01PITT_INST&isCD
+Search=false&lang=en&limit=10&newspapersActive=false&newspapersSearch=false&offset=0&otbRanking=false&pcAvai
+lability=false&qExclude=&qInclude=&rapido=false&refEntryActive=false&rtaLinks=true&scope=MyInst_and_CI&searc
+hInFulltextUserSelection=false&skipDelivery=Y&sort=rank&tab=Everything&vid=01PITT_INST:01PITT_INST"""
+
+QUERY_START = "&q=any,contains,"
+
 sess = requests.session()
 
 
@@ -40,12 +47,9 @@ class HTMLStrip(HTMLParser):
 
 def get_documents(query: str, page: int = 1) -> Dict[str, Any]:
     """Return ten resource results from the specified page"""
-    if page > 50:
-        # Max supported page number is 50
-        page = 50
-
-    payload = {"q": query, "pn": page}
-    resp = sess.get(LIBRARY_URL, params=payload)
+    parsed_query = query.replace(" ", "+")
+    full_query = LIBRARY_URL + QUERY_START + parsed_query
+    resp = sess.get(full_query)
     resp_json = resp.json()
 
     results = _extract_results(resp_json)
@@ -62,7 +66,6 @@ def get_document_by_bookmark(bookmark: str) -> Dict[str, Any]:
         for error in resp_json.get("errors"):
             if error["code"] == "invalid.bookmark.format":
                 raise ValueError("Invalid bookmark")
-
     results = _extract_results(resp_json)
     return results
 
@@ -75,42 +78,37 @@ def _strip_html(html: str) -> str:
 
 def _extract_results(json: Dict[str, Any]) -> Dict[str, Any]:
     results = {
-        "page_count": json["page_count"],
-        "record_count": json["record_count"],
-        "page_number": json["query"]["page_number"],
-        "facet_fields": _extract_facets(json["facet_fields"]),
-        "documents": _extract_documents(json["documents"]),
+        "total_results": json["info"]["total"],
+        "pages": json["info"]["last"],
+        "docs": _extract_documents(json["docs"]),
     }
-
     return results
 
 
 def _extract_documents(documents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     new_docs = []
-
     keep_keys = {
-        "bookmarks",
-        "content_types",
-        "subject_terms",
-        "languages",
+        "title",
+        "language",
+        "subject",
+        "format",
+        "type",
         "isbns",
-        "full_title",
-        "publishers",
-        "publication_years",
-        "discipline",
-        "authors",
-        "abstracts",
-        "link",
-        "lc_call_numbers",
-        "has_fulltext",
-        "fulltext_link",
+        "description",
+        "publisher",
+        "edition",
+        "genre",
+        "place",
+        "creator",
+        "edition",
+        "version",
+        "creationdate",
     }
 
     for doc in documents:
         new_doc = {}
-        for key in set(doc.keys()) & keep_keys:
-            new_doc[key] = doc[key]
-        new_doc["full_title"] = _strip_html(new_doc["full_title"])
+        for key in set(doc["pnx"]["display"].keys()) & keep_keys:
+            new_doc[key] = doc["pnx"]["display"][key]
         new_docs.append(new_doc)
 
     return new_docs
