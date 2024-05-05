@@ -81,7 +81,7 @@ def get_locations() -> dict[str, Any]:
 
 
 def get_location_hours(location_name: str, date: datetime) -> dict[str, Any]:
-    """Returns dictionary containing Opening and Closing times of locations open on date. 
+    """Returns dictionary containing Opening and Closing times of locations open on date.
     -Ex:{'The Eatery': [{'start_hour': 7, 'start_minutes': 0, 'end_hour': 0, 'end_minutes': 0}]}
     - if location_name is None, returns times for all locations
     - date must be in YYYY,MM,DD format, will return data on current day if None
@@ -160,4 +160,3 @@ def get_location_menu(location: str, date: datetime, period_name: str):
     menu = json.loads(menu_resp.content)["menu"]
 
     return menu
-
