@@ -17,82 +17,146 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
 
-import grequests
-from typing import Dict, List, Any
+import requests
+import json
+from datetime import datetime
+from typing import Any
+
+REQUEST_HEADERS = {"User-Agent": "Chrome/103.0.5026.0"}
+
+LOCATIONS = {
+    "ETHEL'S",
+    "THE EATERY",
+    "PANERA BREAD",
+    "TRUE BURGER",
+    "THE PERCH",
+    "FORBES STREET MARKET",
+    "BUNSEN BREWER",
+    "WICKED PIE",
+    "SMOKELAND BBQ AT THE PETERSEN EVENTS CENTER",
+    "THE MARKET AT TOWERS",
+    "THE DELICATESSEN",
+    "CAMPUS COFFEE & TEA CO - TOWERS",
+    "PA TACO CO.",
+    "FT. PITT SUBS",
+    "CREATE",
+    "POM & HONEY",
+    "THE ROOST",
+    "CATHEDRAL SUSHI",
+    "BURRITO BOWL",
+    "CHICK-FIL-A",
+    "SHAKE SMART",
+    "STEEL CITY KITCHEN",
+    "SMOKELAND BBQ FOOD TRUCK",
+    "CAMPUS COFFEE & TEA CO - SUTHERLAND",
+    "THE MARKET AT SUTHERLAND",
+    "PLATE TO PLATE AT SUTHERLAND MARKET",
+    "EINSTEIN BROS. BAGELS - POSVAR",
+    "EINSTEIN BROS. BAGELS - BENEDUM",
+    "BOTTOM LINE BISTRO",
+    "CAFE VICTORIA",
+    "CAFE 1787",
+    "CAMPUS COFFEE & TEA CO - PUBLIC HEALTH",
+    "RXPRESSO",
+    "SIDEBAR CAFE",
+    "CAFE 1923",
+}
 
 
-def _get_all_locations():
-    """Creates a generator of responses to fetch data on all dining locations"""
-    request_objs = []
-    for i in range(3):
-        payload = {
-            "_kgoui_object": "kgoui_Rcontent_I2",
-            "feed": "dining_locations",
-            "start": i * 10,
-        }
-        request_objs.append(
-            grequests.get("https://m.pitt.edu/dining/index.json", params=payload)
-        )
-    resps = grequests.imap(request_objs)
-    return resps
+def get_locations() -> dict[str, Any]:
+    """Gets data about all dining locations"""
 
+    url = "https://api.dineoncampus.com/v1/locations/status?site_id=5e6fcc641ca48e0cacd93b04&platform="
 
-def get_locations():
-    """Gets information about all dining locations"""
-    return get_locations_by_status(None)
+    resp = requests.get(
+        url,
+        headers=REQUEST_HEADERS,
+    )
 
+    locations = json.loads(resp.content)["locations"]
 
-def get_locations_by_status(status: str) -> List[Dict[str, Any]]:
-    """status can be nil, open, or closed
-    None    - returns all dining locations
-    'open'   - returns open dining locations
-    'closed' - returns closed dining locations"""
-
-    dining_locations = []
-    resps = [
-        r.json()["response"]["regions"][0]["contents"] for r in _get_all_locations()
-    ]
-
-    for location in resps:
-        for content in location:
-            data = {}
-            fields = content["fields"]
-            if fields["type"] == "loadMore":
-                continue
-            if status in ["open", "closed"]:
-                if status != fields["status"]:
-                    continue
-
-            if isinstance(fields["title"], dict):
-                data["name"] = fields["title"]["value"]
-            else:
-                data["name"] = fields["title"]
-            data["status"] = fields["status"]
-            try:
-                data["hours"] = fields["eventDate"]["formatted"]
-            except TypeError:
-                data["hours"] = "unavailable"
-
-            dining_locations.append(data)
+    dining_locations = {location["name"].upper(): location for location in locations}
 
     return dining_locations
 
 
-# def get_location_by_name(location):
-#    try:
-#        return get_locations()[location]
-#    except:
-#        raise ValueError('The dining location is invalid')
+def get_location_hours(location_name: str, date: datetime) -> dict[str, Any]:
+    """Returns dictionary containing Opening and Closing times of locations open on date.
+    -Ex:{'The Eatery': [{'start_hour': 7, 'start_minutes': 0, 'end_hour': 0, 'end_minutes': 0}]}
+    - if location_name is None, returns times for all locations
+    - date must be in YYYY,MM,DD format, will return data on current day if None
+    """
 
-# def get_location_menu(location=None, date=None):
-# location can only be market, market's subordinates, and cathedral cafe
-# if location is none, return all menus, and date will be ignored
-# date has to be a day of the week, or if empty will return menus for all days of the week
-#
-# https://www.pc.pitt.edu/dining/menus/flyingStar.php
-# https://www.pc.pitt.edu/dining/menus/bellaTrattoria.php
-# https://www.pc.pitt.edu/dining/menus/basicKneads.php
-# https://www.pc.pitt.edu/dining/menus/basicKneads.php
-# https://www.pc.pitt.edu/dining/menus/magellans.php
-# https://www.pc.pitt.edu/dining/locations/cathedralCafe.php
-#    return []
+    if location_name != None and location_name.upper() not in LOCATIONS:
+        raise ValueError("Invalid Dining Location")
+
+    if date == None:
+        date = datetime.now()
+
+    date_str = date.strftime("%Y-%m-%d")
+
+    url = f"https://api.dineoncampus.com/v1/locations/weekly_schedule?site_id=5e6fcc641ca48e0cacd93b04&date=%22{date_str}%22"
+
+    resp = requests.get(url, headers=REQUEST_HEADERS)
+
+    if resp.status_code == 502:
+        raise ValueError("Invalid Date")
+
+    locations = json.loads(resp.content)["the_locations"]
+
+    hours = {}
+
+    if location_name == None:
+        for location in locations:
+            for day in location["week"]:
+                if day["date"] == date_str:
+                    hours[location["name"]] = day["hours"]
+    else:
+        for location in locations:
+            if location["name"].upper() == location_name.upper():
+                for day in location["week"]:
+                    if day["date"] == date_str:
+                        hours[location["name"]] = day["hours"]
+                break
+
+    return hours
+
+
+def get_location_menu(location: str, date: datetime, period_name: str):
+    """Returns menu data for given dining location on given day/period
+    -period_name used for locations with different serving periods(i.e. 'Breakfast','Lunch','Dinner','Late Night')
+        - None -> Returns menu for first(or only) period at location"""
+
+    if location.upper() not in LOCATIONS:
+        raise ValueError("Invalid Dining Location")
+
+    if date == None:
+        date = datetime.today()
+
+    date_str = date.strftime("%y-%m-%d")
+
+    location_id = get_locations()[location.upper()]["id"]
+
+    periods_url = f"https://api.dineoncampus.com/v1/location/{location_id}/periods?platform=0&date={date_str}"
+
+    periods_resp = requests.get(periods_url, headers=REQUEST_HEADERS)
+
+    if periods_resp.status_code == 502:
+        raise ValueError("Invalid Date")
+
+    periods = json.loads(periods_resp.content)["periods"]
+
+    if period_name == None or len(periods) == 1:
+        period_id = periods[0]["id"]
+    else:
+        for period in periods:
+            if period["name"].lower() == period_name.lower():
+                period_id = period["id"]
+
+    menu_url = f"https://api.dineoncampus.com/v1/location/{location_id}/periods/{period_id}?platform=0&date={date_str}"
+
+    menu_resp = requests.get(menu_url, headers=REQUEST_HEADERS)
+
+    menu = json.loads(menu_resp.content)["menu"]
+
+    return menu
