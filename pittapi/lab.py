@@ -33,6 +33,7 @@ so no concern), just doing this to supress warnings
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+"""
 LAB_OPEN_PATTERN = compile(
     "{name} Lab is {status}: {windows:d} Windows, {macs:d} Macs, {linux:d} Linux"
 )
@@ -45,12 +46,12 @@ class Lab(NamedTuple):
     windows: int
     mac: int
     linux: int
-
+"""
 
 def _fetch_labs():
-    """Fetches text of status/machines of all labs."""
+    """Fetches dictionary of status of all labs."""
     labs = {}
-    
+
     # get the full lab data from API
     resp = requests.get(URL, verify=False)
     resp = resp.json()
@@ -63,17 +64,30 @@ def _fetch_labs():
     return labs
 
 
-def get_status() -> List[Lab]:
-    """Returns a dictionary with status and amount of OS machines."""
-    labs = []
-    for lab_data in _fetch_labs():
-        if "open" in lab_data:
-            content = LAB_OPEN_PATTERN.parse(lab_data)
-            computing_lab = Lab(**content.named)
-        else:
-            content = LAB_CLOSED_PATTERN.parse(lab_data)
-            computing_lab = Lab(**content.named, windows=0, mac=0, linux=0)
-        labs.append(computing_lab)
-    return labs
+def get_status():
+    """Returns a dictionary with status and amount of open machines."""
+    # get the list of all the labs (plus open status) at other
+    statuses = []
+    labs = _fetch_labs()
 
-print(_fetch_labs())
+    # get all the different labs + printers at all Pitt campuses
+    resp = requests.get(URL, verify=False)
+    resp = resp.json()
+    data = resp["results"]["divs"]
+
+    for key in data:
+        # only include those that are Pitt main campus 
+        if key["name"] in labs:
+            total = key["total"]
+            in_use = key["active"]
+            statuses.append(
+                {
+                    "location": key["name"],
+                    "isOpen": labs[key["name"]],
+                    "total": total,
+                    "in_use": in_use
+                }
+            )
+    return statuses
+
+print(get_status())
