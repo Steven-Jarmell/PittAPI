@@ -47,13 +47,20 @@ class Lab(NamedTuple):
     linux: int
 
 
-def _fetch_labs() -> List[str]:
+def _fetch_labs():
     """Fetches text of status/machines of all labs."""
+    labs = {}
+    
+    # get the full lab data from API
     resp = requests.get(URL, verify=False)
     resp = resp.json()
     data = resp["results"]["states"]
-    print(data)
-    return None
+
+    # "1" means open, "0" means closed
+    for location in data:
+        labs[location] = data[location]["state"]
+    
+    return labs
 
 
 def get_status() -> List[Lab]:
@@ -69,4 +76,4 @@ def get_status() -> List[Lab]:
         labs.append(computing_lab)
     return labs
 
-_fetch_labs()
+print(_fetch_labs())
