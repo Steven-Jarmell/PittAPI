@@ -65,7 +65,7 @@ def _fetch_labs():
 
 
 def get_status():
-    """Returns a dictionary with status and amount of open machines."""
+    """Returns a list with status and amount of open machines."""
     # get the list of all the labs (plus open status) at other
     statuses = []
     labs = _fetch_labs()
@@ -89,5 +89,3 @@ def get_status():
                 }
             )
     return statuses
-
-print(get_status())
