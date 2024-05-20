@@ -13,4 +13,3 @@
 Returns a list of dictionaries with parameters 'title' and 'url' of each news article from each news feed category.
 News fetched from `feed`.
 Maximum length specified by `max_news_items`.
-

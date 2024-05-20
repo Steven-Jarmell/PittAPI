@@ -65,9 +65,9 @@ two = dining.get_location_by_name("cup_&_chaucer-hillman")
 ```
 
 ## Local Setup
-Install Python 3.12 and ``pipenv``.  
-  
-Run ``pipenv install`` and ``pipenv shell`` to create and setup the virtual environment.  
+Install Python 3.12 and ``pipenv``.
+
+Run ``pipenv install`` and ``pipenv shell`` to create and setup the virtual environment.
 
 ## Tests
 

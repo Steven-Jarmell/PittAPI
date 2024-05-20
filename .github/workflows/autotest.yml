@@ -2,7 +2,7 @@ name: Monthly Full Test
 
 run-name: ${{ github.actor }} is running unit tests for PittAPI
 
-on: 
+on:
   schedule:
     - cron: '00 12 1 * *'
 
@@ -31,6 +31,3 @@ jobs:
       - name: Run all tests with pytest
         run: |
           pytest --cov=pittapi tests/
-
-    
-
