@@ -68,6 +68,6 @@ class DiningTest(unittest.TestCase):
         responses.add(responses.GET,
                       "https://api.dineoncampus.com/v1/location/610b1f78e82971147c9f8ba5/periods/659daa4d351d53068df67835?platform=0&date=24-04-12",
                       json=self.dining_menu_data, status=200)
-        locations = dining.get_location_menu("The Eatery", datetime.datetime(2024,4,12), "Breakfast")
+        locations = dining.get_location_menu("The Eatery", datetime.datetime(2024, 4, 12), "Breakfast")
         self.assertIsInstance(locations, dict)
     
