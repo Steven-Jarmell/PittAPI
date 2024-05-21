@@ -55,7 +55,7 @@ class DiningTest(unittest.TestCase):
                       "https://api.dineoncampus.com/v1/locations/weekly_schedule?site_id=5e6fcc641ca48e0cacd93b04&date=%222024-04-12%22",
                       json=self.dining_schedule_data, status=200)
 
-        self.assertIsInstance(dining.get_location_hours("The Eatery", datetime.datetime(2024,4,12)), dict)
+        self.assertIsInstance(dining.get_location_hours("The Eatery", datetime.datetime(2024, 4, 12)), dict)
 
     @responses.activate
     def test_get_location_menu(self):
