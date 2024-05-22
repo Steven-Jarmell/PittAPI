@@ -27,7 +27,7 @@ import urllib3
 URL = "https://pitt-keyserve-prod.univ.pitt.edu/maps/std/avail.json"
 
 """
-Lab API is insecure for some reason (it's offical Pitt one 
+Lab API is insecure for some reason (it's offical Pitt one
 so no concern), just doing this to supress warnings
 """
 
@@ -60,7 +60,7 @@ def _fetch_labs():
     # "1" means open, "0" means closed
     for location in data:
         labs[location] = data[location]["state"]
-    
+
     return labs
 
 
@@ -76,7 +76,7 @@ def get_status():
     data = resp["results"]["divs"]
 
     for key in data:
-        # only include those that are Pitt main campus 
+        # only include those that are Pitt main campus
         if key["name"] in labs:
             total = key["total"]
             in_use = key["active"]

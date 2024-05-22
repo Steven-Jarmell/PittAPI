@@ -32,4 +32,3 @@ Returns a dictionary with free washers and dryers as well as total washers and d
   - `building_name`: Building name (comes from LaundryAPI's **location_dict**)
 
 #### **Returns**:
-
