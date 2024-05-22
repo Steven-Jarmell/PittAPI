@@ -66,7 +66,7 @@ CourseDetails(
     credit_range=(3,3),
     requisites='PREQ: (CS 0441 or CS 0406) and (CS 0445 or CS 0455 or COE 0445) ; (MIN GRADE 'C' or Transfer FOR ALL COURSES LISTED)',
     components=[
-        Component(component='Lecture', required=True), 
+        Component(component='Lecture', required=True),
         Component(component='Recitation', required=True)
     ],
     attributes=None,
@@ -81,11 +81,11 @@ CourseDetails(
             instructors=[Instructor(name='Nicholas Farnan', email='')],
             meetings=[
                 Meeting(
-                    days='MoWe', 
-                    start_time='09.30.00.000000-05:00', 
-                    end_time='10.45.00.000000-05:00', 
-                    start_date='01/07/2019', 
-                    end_date='04/19/2019', 
+                    days='MoWe',
+                    start_time='09.30.00.000000-05:00',
+                    end_time='10.45.00.000000-05:00',
+                    start_date='01/07/2019',
+                    end_date='04/19/2019',
                     instructors=[Instructor(name='Nicholas Farnan', email=None)]
                 )
             ],
@@ -104,7 +104,7 @@ CourseDetails(
   - `class_number`: Class Number | Example: `27740` | Note: Potential class numbers can be determined via a call to `get_course_details`
 
 #### **Returns**:
-Return a `Section` object containing information for a particular section. 
+Return a `Section` object containing information for a particular section.
 
 #### **Example**:
 
@@ -113,33 +113,33 @@ Return a `Section` object containing information for a particular section.
 >>> cs_section = course.get_section_details('2194', '27740')
 >>> str(cs_section)
 Section(
-    term='2194', 
-    session='Academic Term', 
-    section_number='1040', 
-    class_number='27740', 
-    section_type='LEC', 
-    status='Open', 
-    instructors=None, 
+    term='2194',
+    session='Academic Term',
+    section_number='1040',
+    class_number='27740',
+    section_type='LEC',
+    status='Open',
+    instructors=None,
     meetings=[
         Meeting(
-            days='MoWe', 
-            start_time='9:30AM', 
-            end_time='10:45AM', 
+            days='MoWe',
+            start_time='9:30AM',
+            end_time='10:45AM',
             start_date='01/07/2019',
-            end_date='04/19/2019', 
+            end_date='04/19/2019',
             instructors=[
                 Instructor(name='Nicholas Farnan', email='')
             ]
         )
-    ], 
+    ],
     details=SectionDetails(
-        units='3 units', 
-        class_capacity='26', 
-        enrollment_total='25', 
+        units='3 units',
+        class_capacity='26',
+        enrollment_total='25',
         enrollment_available='1',
-         wait_list_capacity='20', 
-         wait_list_total='1', 
-         valid_to_enroll='F', 
+         wait_list_capacity='20',
+         wait_list_total='1',
+         valid_to_enroll='F',
          combined_section_numbers=['21754', '27740', '27741']
     )
 )

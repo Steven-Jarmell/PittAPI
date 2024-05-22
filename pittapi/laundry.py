@@ -76,7 +76,7 @@ def get_status_simple(building_name: str) -> Dict[str, str]:
                 freeDryers += 1
         # for towers, they have "combo" machines with this type, no individual washers and dryers |
         # one part of combo being in use marks the whole thing as in use, so we can only show if
-        # both parts are free. 
+        # both parts are free.
         elif obj["type"] == "washNdry":
             totalWashers += 1
             totalDryers += 1

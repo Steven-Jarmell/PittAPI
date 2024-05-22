@@ -42,7 +42,7 @@ class CourseTest(unittest.TestCase):
 
     def test_validate_subject(self):
         self.assertEqual(course._validate_subject('CS'), 'CS')
-        
+
         self.assertRaises(ValueError, course._validate_subject, 'foobar')
 
     def test_validate_course(self):
@@ -68,7 +68,7 @@ class CourseTest(unittest.TestCase):
         subject_courses = course.get_subject_courses('CS')
 
         course._get_subject_courses.assert_called_once_with('CS')
-        
+
         self.assertTrue(isinstance(subject_courses, Subject))
 
         self.assertEqual(len(subject_courses.courses), 1)
@@ -90,7 +90,7 @@ class CourseTest(unittest.TestCase):
         course_sections = course.get_course_details('2231', 'CS', '0007')
 
         self.assertTrue(isinstance(course_sections, CourseDetails))
-        
+
         self.assertTrue(isinstance(course_sections.course, Course))
         course_obj = course_sections.course
         self.assertEqual(course_obj.subject_code, 'CS')
@@ -128,7 +128,7 @@ class CourseTest(unittest.TestCase):
         self.assertEqual(test_meeting.end_time, "10.50.00.000000-05:00")
         self.assertEqual(test_meeting.start_date, "08/29/2022")
         self.assertEqual(test_meeting.end_date, "12/09/2022")
-        
+
         test_instructor = test_section.instructors[0]
         self.assertTrue(isinstance(test_instructor, Instructor))
         self.assertEqual(test_instructor.name, "Robert Fishel")

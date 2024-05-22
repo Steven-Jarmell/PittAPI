@@ -156,7 +156,7 @@ class LibraryTest(unittest.TestCase):
         }
         sports._get_mens_basketball_data = MagicMock(return_value=mocked_basketball_data)
         sports._get_football_data = MagicMock(return_value=mocked_football_data)
-    
+
     def test_get_mens_basketball_record(self):
         self.assertEqual("11-21", sports.get_mens_basketball_record())
 

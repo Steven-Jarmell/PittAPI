@@ -179,7 +179,7 @@ shuttle.get_routes()
     "IsCheckedOnMap": false,
     "IsVisibleOnMap": true,
     "Landmarks": [
-      
+
     ],
     "MapLatitude": 40.44505,
     "MapLineColor": "#04BB84",
