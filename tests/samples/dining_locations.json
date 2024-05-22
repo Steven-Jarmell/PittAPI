@@ -1,0 +1,1039 @@
+{
+  "status": "success",
+  "request_time": 0.062967491,
+  "records": 0,
+  "locations": [
+    {
+      "id": "65a19e22e45d4300f4de868d",
+      "name": "Ethel's",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 7:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": null
+    },
+    {
+      "id": "610b1f78e82971147c9f8ba5",
+      "name": "The Eatery",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3925",
+        "metadata": "Forbes Ave",
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4425984072476,
+        "lon": -79.9563868259369,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9900861, 40.4416941],
+        "manual_coords": [40.4425984072476, -79.9563868259369],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "645bebdae45d4308cce93438",
+      "name": "Panera Bread",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3550 Terrace Street",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15261",
+        "lat": 40.4425133,
+        "lon": -79.961826,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.961826, 40.4425133],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb7bb6c4b7ff086298cac4",
+      "name": "True Burger",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3959 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4455862,
+        "lon": -79.9531565,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9531565, 40.4455862],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "6123ff86a9f13a2a48c2a8ed",
+      "name": "The Perch",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3725 Sutherland Drive",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.445790541765,
+        "lon": -79.9624875678081,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9624486757774, 40.4459222],
+        "manual_coords": [40.445790541765, -79.9624875678081],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "612532a8b63f1edd9aaed126",
+      "name": "Forbes Street Market",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 7:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3955 Forbes Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.442778879054,
+        "lon": -79.9554030431186,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9554030431186, 40.442778879054],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "645e3d08c625af073bda04e3",
+      "name": "Bunsen Brewer",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "219 Parkman Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4460424,
+        "lon": -79.9576132,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9576132, 40.4460424],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "62f666cee45d4305a44e517d",
+      "name": "Wicked Pie",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3959 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4436495,
+        "lon": -79.9545159,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9545159, 40.4436495],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "6365356ae45d430afb4f682c",
+      "name": "Smokeland BBQ at The Petersen Events Center",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3719 terrace st",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15261",
+        "lat": 40.4439212,
+        "lon": -79.9622944,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9622944, 40.4439212],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5f031a56bf31720942fc3c14",
+      "name": "The Market at Towers",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3990 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4435993517343,
+        "lon": -79.9557818868494,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9557818868494, 40.4435993517343],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef357924198d4084b2fe212",
+      "name": "The Delicatessen",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3990 Fifth Ave",
+        "metadata": null,
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4435993517343,
+        "lon": -79.9557818868494,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9557818868494, 40.4435993517343],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef26f8c1ca48e0934a97323",
+      "name": "Campus Coffee & Tea Co - Towers",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3990 Fifth Ave",
+        "metadata": "3990 Fifth Ave",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4425284405266,
+        "lon": -79.9564683437348,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9557818868494, 40.4435993517343],
+        "manual_coords": [40.4425284405266, -79.9564683437348],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ecd78731ca48e089d8c5f38",
+      "name": "PA Taco Co.",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3959 Fifth Ave",
+        "metadata": null,
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4455862,
+        "lon": -79.9531565,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9531565, 40.4455862],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb7dafc4b7ff086298cbe5",
+      "name": "Ft. Pitt Subs",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3959 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4455862,
+        "lon": -79.9531565,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9531565, 40.4455862],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef26f8c1ca48e0934a97326",
+      "name": "CrEATe",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3959 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4455862,
+        "lon": -79.9531565,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9531565, 40.4455862],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eea80e0c4b7ff086297be0c",
+      "name": "Pom & Honey",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "4200 Fifth Ave",
+        "metadata": null,
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4444396,
+        "lon": -79.9534184,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9534184, 40.4444396],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "613a55f5b63f1e9cfc7fd24b",
+      "name": "The Roost",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "4200 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.44439,
+        "lon": -79.9534133,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9534133, 40.44439],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "6127d288a9f13a2ca8caed2b",
+      "name": "Cathedral Sushi",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "4200 Fifth Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4443232483089,
+        "lon": -79.9531501790985,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9534184, 40.4444396],
+        "manual_coords": [40.4443232483089, -79.9531501790985],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ecd67574198d40824f7cf40",
+      "name": "Burrito Bowl",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3719 Terrace St.",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15260",
+        "lat": 40.4438756942711,
+        "lon": -79.962272644043,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.962272644043, 40.4438756942711],
+        "manual_coords": [40.4438756942711, -79.962272644043],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ecd67614198d40824f7cf42",
+      "name": "Chick-fil-A",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3719 Terrace Street",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15260",
+        "lat": 40.4438648073975,
+        "lon": -79.9623209238052,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9623209238052, 40.4438648073975],
+        "manual_coords": [40.4438648073975, -79.9623209238052],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb754fc4b7ff086298ba58",
+      "name": "Shake Smart",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3719 Terrace St.",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4436255,
+        "lon": -79.9611135,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9611135, 40.4436255],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb75bfc4b7ff086298ba67",
+      "name": "Steel City Kitchen",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3719 Terrace St.",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4436255,
+        "lon": -79.9611135,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9611135, 40.4436255],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eefcc044198d4084b2aef16",
+      "name": "Smokeland BBQ Food Truck",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 11:00am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3942 Forbes Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15260",
+        "lat": 40.4425725,
+        "lon": -79.9551887,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9551887, 40.4425725],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef26f8c1ca48e0934a97325",
+      "name": "Campus Coffee & Tea Co - Sutherland",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3725 Sutherland Drive",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4436472489044,
+        "lon": -79.9631559352038,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9631559352038, 40.4436472489044],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ecd7997c4b7ff09613be911",
+      "name": "The Market at Sutherland",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3725 Sutherland Drive",
+        "metadata": null,
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4436472489044,
+        "lon": -79.9631559352038,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9631559352038, 40.4436472489044],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef36c631ca48e0934aab6e1",
+      "name": "Plate to Plate at Sutherland Market",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3725 Sutherland Drive",
+        "metadata": null,
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": null,
+        "lon": null,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [null, null],
+        "manual_coords": [null, null],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb8b9b1ca48e087b961ef0",
+      "name": "Einstein Bros. Bagels - Posvar",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "230 S. Bouquet St.",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.44165855,
+        "lon": -79.9537985394935,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9537985394935, 40.44165855],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb8bf81ca48e087297ae22",
+      "name": "Einstein Bros. Bagels - Benedum",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3700 O'Hara St.",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4438649,
+        "lon": -79.9586103,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9586103, 40.4438649],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eefcc034198d4084b2aef14",
+      "name": "Bottom Line Bistro",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3950 Roberto Clemente Drive",
+        "metadata": "3950 Roberto Clemente Drive",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4408273239115,
+        "lon": -79.9533838033676,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9533372, 40.4412008],
+        "manual_coords": [40.4408273239115, -79.9533838033676],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb8cdb1ca48e087297b7c1",
+      "name": "Cafe Victoria",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3500 Victoria Street",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.441450618089,
+        "lon": -79.9606955051422,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9606955051422, 40.441450618089],
+        "manual_coords": [40.441450618089, -79.9606955051422],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef87c54a38afc0b3e504fe9",
+      "name": "Cafe 1787",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "4215 Fifth Ave",
+        "metadata": "4215 Fifth Ave",
+        "city": "PITTSBURGH",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4450677871884,
+        "lon": -79.954719543457,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9543774608659, 40.4448068535626],
+        "manual_coords": [40.4450677871884, -79.954719543457],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5ef26f8c1ca48e0934a97324",
+      "name": "Campus Coffee & Tea Co - Public Health",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "130 De Soto Street",
+        "metadata": "130 De Soto Street",
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.4429693629065,
+        "lon": -79.9586141109467,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.9586141109467, 40.4429693629065],
+        "manual_coords": [40.4429693629065, -79.9586141109467],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb9e5fc4b7ff0862992bac",
+      "name": "RxPresso",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 7:30am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3501 Terrace Street",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.442106,
+        "lon": -79.962812,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.962812, 40.442106],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "5eeb9e894198d4081d8ebeb1",
+      "name": "Sidebar Cafe",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "3900 Forbes Ave",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "Pennsylvania",
+        "zip_code": "15213",
+        "lat": 40.441959,
+        "lon": -79.956266,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.956266, 40.441959],
+        "manual_coords": [],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    },
+    {
+      "id": "6127d23eb63f1e22221937bc",
+      "name": "Cafe 1923",
+      "open": false,
+      "status": {
+        "label": "closed",
+        "message": "Closed. Opens at 7:30am.",
+        "color": "red"
+      },
+      "occupancy": "na",
+      "address": {
+        "street": "123 University Place",
+        "metadata": null,
+        "city": "Pittsburgh",
+        "state": "PA",
+        "zip_code": "15213",
+        "lat": 40.4442148248078,
+        "lon": -79.956711567588,
+        "phone": null,
+        "dst": false,
+        "gmt": 0,
+        "phone_formatted": null,
+        "ext_formatted": null,
+        "gmt_offset": 0,
+        "coordinates": [-79.956180490203, 40.4440596886561],
+        "manual_coords": [40.4442148248078, -79.956711567588],
+        "abbreviation": null,
+        "zone_name": null
+      }
+    }
+  ]
+}
