@@ -125,7 +125,7 @@ class PeopleTest(unittest.TestCase):
     def test_people_get_person_too_many(self):
         responses.add(responses.POST, people.PEOPLE_SEARCH_URL,
                       body=TOO_MANY_TEST_DATA, status=200)
-        
+
         ans = people.get_person("Smith")
         self.assertIsInstance(ans,list)
         self.assertEqual(ans, [{"ERROR":"Too many people matched your criteria."}])
@@ -134,7 +134,7 @@ class PeopleTest(unittest.TestCase):
     def test_people_get_person_none(self):
         responses.add(responses.POST, people.PEOPLE_SEARCH_URL,
                       body=NONE_FOUND_TEST_DATA, status=200)
-        
+
         ans = people.get_person("Lebron Iverson Jordan Kobe")
         self.assertIsInstance(ans,list)
         self.assertEqual(ans, [{"ERROR":"No one found."}])
