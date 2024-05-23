@@ -40,7 +40,7 @@ class DiningTest(unittest.TestCase):
 
         with (SAMPLE_PATH / 'dining_menu.json').open() as f:
             self.dining_menu_data = json.load(f)
-        
+
 
     @responses.activate
     def test_get_locations(self):
@@ -70,4 +70,3 @@ class DiningTest(unittest.TestCase):
                       json=self.dining_menu_data, status=200)
         locations = dining.get_location_menu("The Eatery", datetime.datetime(2024, 4, 12), "Breakfast")
         self.assertIsInstance(locations, dict)
-    

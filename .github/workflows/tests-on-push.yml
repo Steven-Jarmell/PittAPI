@@ -35,5 +35,4 @@ jobs:
     - name: Test with pytest
       run: pytest --cov=pittapi tests/
           --ignore=tests/lab_test.py
-          --ignore=tests/library_test.py
           --ignore=tests/people_test.py

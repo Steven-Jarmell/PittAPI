@@ -21,11 +21,16 @@ import requests
 from html.parser import HTMLParser
 from typing import Any, Dict, List
 
-LIBRARY_URL = """https://pitt.primo.exlibrisgroup.com/primaws/rest/pub/pnxs?acTriggered=false&blendFac
-etsSeparately=false&citationTrailFilterByAvailability=true&disableCache=false&getMore=0&inst=01PITT_INST&isCD
-Search=false&lang=en&limit=10&newspapersActive=false&newspapersSearch=false&offset=0&otbRanking=false&pcAvai
-lability=false&qExclude=&qInclude=&rapido=false&refEntryActive=false&rtaLinks=true&scope=MyInst_and_CI&searc
-hInFulltextUserSelection=false&skipDelivery=Y&sort=rank&tab=Everything&vid=01PITT_INST:01PITT_INST"""
+LIBRARY_URL = (
+    "https://pitt.primo.exlibrisgroup.com/primaws/rest/pub/pnxs"
+    "?acTriggered=false&blendFacetsSeparately=false"
+    "&citationTrailFilterByAvailability=true&disableCache=false&getMore=0"
+    "&inst=01PITT_INST&isCDSearch=false&lang=en&limit=10&newspapersActive=false"
+    "&newspapersSearch=false&offset=0&otbRanking=false&pcAvailability=false"
+    "&qExclude=&qInclude=&rapido=false&refEntryActive=false&rtaLinks=true"
+    "&scope=MyInst_and_CI&searchInFulltextUserSelection=false&skipDelivery=Y"
+    "&sort=rank&tab=Everything&vid=01PITT_INST:01PITT_INST"
+)
 
 QUERY_START = "&q=any,contains,"
 

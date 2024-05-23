@@ -17,24 +17,32 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
 
+import json
 import unittest
-import pytest
+from pathlib import Path
+
+import responses
 
 from pittapi import library
 
+SAMPLE_PATH = Path() / 'tests' / 'samples'
+
+
 class LibraryTest(unittest.TestCase):
+    def __init__(self, *args, **kwargs):
+        unittest.TestCase.__init__(self, *args, **kwargs)
+        with (SAMPLE_PATH / 'library_mock_response_water.json').open() as f:
+            self.library_query = json.load(f)
+
+    @responses.activate
     def test_get_documents(self):
-        self.assertIsInstance(library.get_documents("water"), dict)
-
-
-    @pytest.mark.skip(reason="bookmarks seem to not be supported in new API anymore")
-    def test_get_document_by_bookmark(self):
-        bookmark_test = library.get_document_by_bookmark("ePnHCXMw42LgT" +
-            "QStzc4rAe_hSmEGbaYyt7QAHThpwMYgouGcGJDo6hSkCezyGQI7SJYmZgacDKzhQ" +
-            "LXAWkDazTXE2UMXdOZRPHT8Ih50Ha6hBehic_yyKlhkYVM48RbmFiamxibGAFlyLRc")
-        self.assertIsInstance(bookmark_test, dict)
-
-
-    @pytest.mark.skip(reason="bookmarks seem to not be supported in new API anymore")
-    def test_invalid_bookmark(self):
-        self.assertRaises(ValueError, library.get_document_by_bookmark("abcd"))
+        responses.add(
+            responses.GET,
+            library.LIBRARY_URL + library.QUERY_START + "water",
+            json=self.library_query,
+            status=200
+        )
+        query_result = library.get_documents("water")
+        self.assertIsInstance(query_result, dict)
+        self.assertEqual(query_result["pages"], 10)
+        self.assertEqual(len(query_result["docs"]), 10)
