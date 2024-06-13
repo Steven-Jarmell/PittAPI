@@ -1,7 +1,5 @@
 name: Run unit tests
 
-run-name: ${{ github.actor }} is running unit tests for PittAPI
-
 on:
   push:
     branches: [ "dev" ]
