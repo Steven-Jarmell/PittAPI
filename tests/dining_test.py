@@ -60,7 +60,10 @@ class DiningTest(unittest.TestCase):
             status=200,
         )
 
-        self.assertIsInstance(dining.get_location_hours("The Eatery", datetime.datetime(2024, 4, 12)), dict)
+        self.assertIsInstance(
+            dining.get_location_hours("The Eatery", datetime.datetime(2024, 4, 12)),
+            dict,
+        )
 
     @responses.activate
     def test_get_location_menu(self):

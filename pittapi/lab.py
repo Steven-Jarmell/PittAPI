@@ -77,5 +77,13 @@ def get_status():
         if key["name"] in labs:
             total = key["total"]
             in_use = key["active"]
-            statuses.append({"location": key["name"], "isOpen": labs[key["name"]], "total": total, "in_use": in_use})
+            statuses.append(
+                {
+                    "location": key["name"],
+                    "isOpen": labs[key["name"]],
+                    "total": total,
+                    "in_use": in_use,
+                }
+            )
+
     return statuses

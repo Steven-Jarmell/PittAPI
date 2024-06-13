@@ -25,7 +25,7 @@ import responses
 
 from pittapi import library
 
-SAMPLE_PATH = Path() / "tests" / "samples"
+SAMPLE_PATH = Path(__file__).parent / "samples"
 
 
 class LibraryTest(unittest.TestCase):
@@ -36,8 +36,58 @@ class LibraryTest(unittest.TestCase):
 
     @responses.activate
     def test_get_documents(self):
-        responses.add(responses.GET, library.LIBRARY_URL + library.QUERY_START + "water", json=self.library_query, status=200)
+        responses.add(
+            responses.GET,
+            library.LIBRARY_URL + library.QUERY_START + "water",
+            json=self.library_query,
+            status=200,
+        )
         query_result = library.get_documents("water")
         self.assertIsInstance(query_result, dict)
         self.assertEqual(query_result["pages"], 10)
         self.assertEqual(len(query_result["docs"]), 10)
+
+
+class StudyRoomTest(unittest.TestCase):
+    def __init__(self, *args, **kwargs):
+        unittest.TestCase.__init__(self, *args, **kwargs)
+        with (SAMPLE_PATH / "hillman_study_room_mock_response.json").open() as f:
+            self.hillman_query = json.load(f)
+
+    @responses.activate
+    def test_hillman_total_reserved(self):
+        responses.add(
+            responses.GET,
+            library.STUDY_ROOMS_URL,
+            json=self.hillman_query,
+            status=200,
+        )
+        self.assertEqual(library.hillman_total_reserved(), {"Total Hillman Reservations": 4})
+
+    @responses.activate
+    def test_reserved_hillman_times(self):
+        responses.add(
+            responses.GET,
+            library.STUDY_ROOMS_URL,
+            json=self.hillman_query,
+            status=200,
+        )
+        mock_answer = [
+            {
+                "Room": "408 HL (Max. 5 persons) (Enclosed Room)",
+                "Reserved": ["2024-06-12 17:30:00", "2024-06-12 20:30:00"],
+            },
+            {
+                "Room": "409 HL (Max. 5 persons) (Enclosed Room)",
+                "Reserved": ["2024-06-12 18:00:00", "2024-06-12 21:00:00"],
+            },
+            {
+                "Room": "303 HL (Max. 5 persons) (Enclosed Room)",
+                "Reserved": ["2024-06-12 18:30:00", "2024-06-12 21:30:00"],
+            },
+            {
+                "Room": "217 HL (Max. 10 persons) (Enclosed Room)",
+                "Reserved": ["2024-06-12 19:00:00", "2024-06-12 22:30:00"],
+            },
+        ]
+        self.assertEqual(mock_answer, library.reserved_hillman_times())

@@ -1,7 +1,12 @@
 mocked_subject_data = {"subjects": [{"subject": "CS", "descr": "Computer Science"}]}
-
 mocked_courses_data = {
-    "courses": [{"catalog_nbr": "0007", "descr": "INTRODUCTION TO COMPUTER PROGRAMMING", "crse_id": "105611"}]
+    "courses": [
+        {
+            "catalog_nbr": "0007",
+            "descr": "INTRODUCTION TO COMPUTER PROGRAMMING",
+            "crse_id": "105611",
+        }
+    ]
 }
 
 mocked_courses_data_invalid = {}
@@ -17,7 +22,10 @@ mocked_course_info_data = {
         "course_title": "INTRODUCTION TO COMPUTER PROGRAMMING",
         "rqmnt_designtn": "",
         "effdt": "2018-06-30",
-        "components": [{"descr": "Lecture", "optional": "N"}, {"descr": "Recitation", "optional": "N"}],
+        "components": [
+            {"descr": "Lecture", "optional": "N"},
+            {"descr": "Recitation", "optional": "N"},
+        ],
         "attributes": [
             {
                 "crse_attribute": "DSGE",
@@ -45,11 +53,27 @@ mocked_course_info_data = {
                 "req_group": "",
                 "planner_message": "You have no active career, so you can not add this course to a planner.",
                 "open_terms": [
-                    {"strm": "2224", "descr": "Spring Term 2021-2022", "default_term": False},
-                    {"strm": "2227", "descr": "Summer Term 2021-2022", "default_term": False},
-                    {"strm": "2231", "descr": "Fall Term 2022-2023", "default_term": True},
+                    {
+                        "strm": "2224",
+                        "descr": "Spring Term 2021-2022",
+                        "default_term": False,
+                    },
+                    {
+                        "strm": "2227",
+                        "descr": "Summer Term 2021-2022",
+                        "default_term": False,
+                    },
+                    {
+                        "strm": "2231",
+                        "descr": "Fall Term 2022-2023",
+                        "default_term": True,
+                    },
                 ],
-                "enrollable_terms": [{"strm": "2224"}, {"strm": "2227"}, {"strm": "2231"}],
+                "enrollable_terms": [
+                    {"strm": "2224"},
+                    {"strm": "2227"},
+                    {"strm": "2231"},
+                ],
             }
         ],
     }

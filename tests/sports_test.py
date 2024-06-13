@@ -27,7 +27,11 @@ class LibraryTest(unittest.TestCase):
                 "id": "221",
                 "record": {
                     "items": [
-                        {"description": "Overall Record", "type": "total", "summary": "11-21"},
+                        {
+                            "description": "Overall Record",
+                            "type": "total",
+                            "summary": "11-21",
+                        },
                         {
                             "description": "Home Record",
                             "type": "home",
@@ -40,7 +44,10 @@ class LibraryTest(unittest.TestCase):
                         "date": "2022-03-08T19:00Z",
                         "competitions": [
                             {
-                                "venue": {"fullName": "Barclays Center", "address": {"city": "Brooklyn", "state": "NY"}},
+                                "venue": {
+                                    "fullName": "Barclays Center",
+                                    "address": {"city": "Brooklyn", "state": "NY"},
+                                },
                                 "competitors": [
                                     {
                                         "id": "221",
@@ -79,7 +86,11 @@ class LibraryTest(unittest.TestCase):
                 "name": "Pittsburgh",
                 "record": {
                     "items": [
-                        {"description": "Overall Record", "type": "total", "summary": "10-2"},
+                        {
+                            "description": "Overall Record",
+                            "type": "total",
+                            "summary": "10-2",
+                        },
                         {
                             "description": "Home Record",
                             "type": "home",

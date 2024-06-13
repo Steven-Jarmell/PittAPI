@@ -216,7 +216,12 @@ def get_course_details(term: str | int, subject: str, course: str | int) -> Cour
         )
 
     return CourseDetails(
-        course=Course(subject_code=subject, course_number=course, course_id=internal_course_id, course_title=course_title),
+        course=Course(
+            subject_code=subject,
+            course_number=course,
+            course_id=internal_course_id,
+            course_title=course_title,
+        ),
         course_description=course_description,
         credit_range=credit_range,
         requisites=requisites,
