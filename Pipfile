@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-beautifulsoup4 = "*"
 coverage = "==7.4.3"
 requests = "*"
 responses = "*"
@@ -15,7 +14,6 @@ virtualenv = "*"
 black = "*"
 sphinx = "*"
 requests-html = "*"
-parse = "*"
 pre-commit = "*"
 pytest = "*"
 pytest-cov = "==4.1.0"
