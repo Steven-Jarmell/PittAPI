@@ -9,7 +9,6 @@ responses = "*"
 grequests = "*"
 lxml_html_clean = "*"
 typing = "*"
-virtualenv = "*"
 sphinx = "*"
 requests-html = "*"
 
