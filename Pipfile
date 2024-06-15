@@ -4,13 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-responses = "*"
 grequests = "*"
 lxml_html_clean = "*"
-typing = "*"
-sphinx = "*"
+requests = "*"
 requests-html = "*"
+responses = "*"
+sphinx = "*"
+typing = "*"
 
 [dev-packages]
 black = "*"
