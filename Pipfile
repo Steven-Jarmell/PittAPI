@@ -4,23 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-coverage = "==7.4.3"
 requests = "*"
 responses = "*"
 grequests = "*"
 lxml_html_clean = "*"
 typing = "*"
 virtualenv = "*"
-black = "*"
 sphinx = "*"
 requests-html = "*"
+
+[dev-packages]
+black = "*"
+coverage = "==7.4.3"
+flake8 = "*"
 pre-commit = "*"
 pytest = "*"
 pytest-cov = "==4.1.0"
 pytest-xdist = "*"
-flake8 = "*"
-
-[dev-packages]
 
 [requires]
 python_version = "3.12"
