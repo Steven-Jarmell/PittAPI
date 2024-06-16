@@ -14,11 +14,11 @@ typing = "*"
 
 [dev-packages]
 black = "*"
-coverage = "==7.4.3"
+coverage = "*"
 flake8 = "*"
 pre-commit = "*"
 pytest = "*"
-pytest-cov = "==4.1.0"
+pytest-cov = "*"
 pytest-xdist = "*"
 
 [requires]
