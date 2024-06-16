@@ -9,7 +9,6 @@ lxml_html_clean = "*"
 requests = "*"
 requests-html = "*"
 responses = "*"
-sphinx = "*"
 typing = "*"
 
 [dev-packages]
@@ -20,6 +19,7 @@ pre-commit = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
+sphinx = "*"
 
 [requires]
 python_version = "3.12"
