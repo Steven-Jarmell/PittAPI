@@ -81,9 +81,7 @@ def get_one_lab_data(lab_name: str) -> Lab:
     ]
 
     if lab_name not in valid_lab_names:
-        raise ValueError(
-            f"Invalid lab name: {lab_name}. Valid options: {', '.join(valid_lab_names)}"
-        )
+        raise ValueError(f"Invalid lab name: {lab_name}. Valid options: {', '.join(valid_lab_names)}")
 
     req = requests.get(
         PITT_BASE_URL + AVAIL_LAB_ID_MAP[lab_name] + "/status.json?noredir=1",
@@ -91,13 +89,9 @@ def get_one_lab_data(lab_name: str) -> Lab:
     )
 
     if req.status_code == 404:
-        raise LabAPIError(
-            "The Lab ID was invalid. Please open a GitHub issue so we can resolve this."
-        )
+        raise LabAPIError("The Lab ID was invalid. Please open a GitHub issue so we can resolve this.")
     elif req.status_code != 200:
-        raise LabAPIError(
-            f"An unexpected error occurred while fetching lab data: {req.text}"
-        )
+        raise LabAPIError(f"An unexpected error occurred while fetching lab data: {req.text}")
     else:
         lab_data = req.json()
 
