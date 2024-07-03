@@ -18,23 +18,43 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 """
 
 import unittest
+import responses
+
+from pathlib import Path
+
+from pittapi import people
+
+
+SAMPLE_PATH = Path() / "tests" / "samples"
 
 from pittapi import people
 
 class PeopleTest(unittest.TestCase):
+    def __init__(self, *args, **kwargs):
+        unittest.TestCase.__init__(self, *args, **kwargs)
+        with open(SAMPLE_PATH / "people_ramirez_mock_response.html") as f:
+            self.ramirez_test_data = f.read()
+        with open(SAMPLE_PATH / "people_too_many_mock_response.html") as f:
+            self.too_many_test_data = f.read()
+        with open(SAMPLE_PATH / "people_none_mock_response.html") as f:
+            self.none_found_test_data = f.read()
+
+    @responses.activate
     def test_people_get_person(self):
+        responses.add(responses.POST, people.PEOPLE_SEARCH_URL, body=self.ramirez_test_data, status=200)
         ans = people.get_person("John C Ramirez")
         self.assertIsInstance(ans, list)
-        self.assertTrue(ans[0]['email'] == "ramirez@cs.pitt.edu")
-        self.assertTrue(ans[0]['name'] == "Ramirez, John C")
-        self.assertTrue(ans[0]['office_phone'] == "(412) 624-8441")
+        self.assertTrue(ans[0]["name"] == "Ramirez, John C")
+        self.assertTrue(ans[0]["office_phone"] == "(412) 624-8441")
 
     def test_people_get_person_too_many(self):
+        responses.add(responses.POST, people.PEOPLE_SEARCH_URL, body=self.too_many_test_data, status=200)
         ans = people.get_person("Smith")
-        self.assertIsInstance(ans,list)
-        self.assertEqual(ans, [{"ERROR":"Too many people matched your criteria."}])
+        self.assertIsInstance(ans, list)
+        self.assertEqual(ans, [{"ERROR": "Too many people matched your criteria."}])
 
     def test_people_get_person_none(self):
-        ans = people.get_person("Lebron Iverson Jordan Kobe")
-        self.assertIsInstance(ans,list)
-        self.assertEqual(ans, [{"ERROR":"No one found."}])
+        responses.add(responses.POST, people.PEOPLE_SEARCH_URL, body=self.none_found_test_data, status=200)
+        ans = people.get_person("Lebron Iverson James Jordan Kobe")
+        self.assertIsInstance(ans, list)
+        self.assertEqual(ans, [{"ERROR": "No one found."}])

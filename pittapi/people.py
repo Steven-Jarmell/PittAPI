@@ -16,9 +16,8 @@ You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
+
 from requests_html import HTMLSession
-from typing import List, Dict
-from parse import compile
 
 # Please note that find.pitt.edu will not accept more than 10 requests within a few minutes
 # It will time out if that happens
@@ -42,7 +41,7 @@ LABEL_CONVERSION = {
 }
 
 
-def _parse_segments(person: dict, segments: List[str]) -> None:
+def _parse_segments(person: dict, segments: list[str]) -> None:
     label = None
     for segment in segments:
         if "class" in segment.attrs and "row-label" in segment.attrs["class"]:
@@ -61,12 +60,12 @@ def _parse_segments(person: dict, segments: List[str]) -> None:
                 person[label] = segment.text
 
 
-def get_person(query: str) -> List[Dict[str, str]]:
+def get_person(query: str) -> list[dict[str, str]]:
     payload = {"search": query}
     session = HTMLSession()
     resp = session.post(PEOPLE_SEARCH_URL, data=payload)
     if resp.text.__contains__("Too many people matched your criteria."):
-        return [{"ERROR":"Too many people matched your criteria."}]  # Return an error
+        return [{"ERROR": "Too many people matched your criteria."}]  # Return an error
     elements = resp.html.xpath("/html/div/section")
     result = []
     for entry in elements:
@@ -75,5 +74,5 @@ def get_person(query: str) -> List[Dict[str, str]]:
         _parse_segments(person, segments)
         result.append(person)
     if result == []:
-        return [{"ERROR":"No one found."}] # Return an error
+        return [{"ERROR": "No one found."}]  # Return an error
     return result

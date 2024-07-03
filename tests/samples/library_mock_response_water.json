@@ -1,0 +1,654 @@
+{"beaconO22":"1424",
+  "info" : {
+    "totalResultsLocal" : 121077,
+    "totalResultsPC" : 6691531,
+    "total" : 6812608,
+    "first" : 1,
+    "last" : 10
+  },
+  "highlights" : {
+    "snippet" : [ "water", "Water" ],
+    "title" : [ "Water", "water" ],
+    "termsUnion" : [ "water", "Water" ],
+    "subject" : [ "Water" ],
+    "toc" : [ "water", "Water" ],
+    "description" : [ "water" ]
+  },
+  "docs" : [ {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9911504153406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "journal" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water (New York, N.Y.)" ],
+        "subject" : [ "Water quality management -- Congresses" ],
+        "format" : [ "13 v. : ill., maps ; 29 cm." ],
+        "identifier" : [ "$$CLC$$V   84646853 ;$$CISSN$$V0083-7636;$$COCLC$$V(OCoLC)01045096" ],
+        "creationdate" : [ "c1968-c1981" ],
+        "lds05" : [ "Papers from symposia presented at various meetings of AIChE." ],
+        "lds10" : [ "Bibliography of agriculture 0006-1530" ],
+        "publisher" : [ "New York, N.Y. : American Institute of Chemical Engineers", "1968-1980." ],
+        "mms" : [ "9911504153406236" ],
+        "contributor" : [ "American Institute of Chemical Engineers.$$QAmerican Institute of Chemical Engineers." ],
+        "frequency" : [ "Annual" ],
+        "series" : [ "1968-1971: Chemical engineering progress symposium series$$Q1968-1971: Chemical engineering progress symposium series", "1972-1980: AIChE symposium series$$Q1972-1980: AIChE symposium series", "AIChE symposium series$$QAIChE symposium series", "Chemical engineering progress symposium series$$QChemical engineering progress symposium series" ],
+        "genre" : [ "Congresses." ],
+        "relation" : [ "$$Cmain_series$$VAIChE symposium series$$QAIChE symposium series", "$$Cmain_series$$VChemical engineering progress symposium series$$QChemical engineering progress symposium series" ],
+        "unititle" : [ "Water (New York, N.Y.)" ],
+        "place" : [ "New York, N.Y. :" ],
+        "version" : [ "1" ],
+        "lds04" : [ "1968-1980.", "Issued in 2 vols. <1974, 1976>\n" ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9911504153406236" ],
+        "recordid" : [ "alma9911504153406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "1150415-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.893145575 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "stitle" : [ "Water (N. Y. N. Y.)" ],
+        "date" : [ "1968 - 1980", "c1968-c1981" ],
+        "issn" : [ "0083-7636" ],
+        "cop" : [ "New York, N.Y" ],
+        "pub" : [ "American Institute of Chemical Engineers" ],
+        "oclcid" : [ "(ocolc)1045096" ],
+        "lccn" : [ "84646853", "74093783" ],
+        "seriestitle" : [ "1968-1971: Chemical engineering progress symposium series" ],
+        "format" : [ "journal" ],
+        "genre" : [ "journal" ],
+        "ristype" : [ "JOUR" ],
+        "jtitle" : [ "Water (New York, N.Y.)" ]
+      },
+      "sort" : {
+        "title" : [ "Water (New York, N.Y.)" ],
+        "author" : [ "American Institute of Chemical Engineers." ],
+        "creationdate" : [ "1968" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9056712219168265677" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99101568103606236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water" ],
+        "subject" : [ "Water -- Juvenile literature" ],
+        "format" : [ "1 online resource (24 pages) : illustrations." ],
+        "identifier" : [ "$$CISBN$$V1-61236-389-X;$$CISBN$$V1-58952-414-4" ],
+        "creationdate" : [ "2003" ],
+        "lds05" : [ "Bibliographic Level Mode of Issuance: Monograph", "Includes bibliographical references (page 24) and index.", "English" ],
+        "creator" : [ "Cooper, Jason Author$$QCooper, Jason" ],
+        "publisher" : [ "Place of publication not identified Rourke Publishing LLC" ],
+        "description" : [ "Explores water and it's secrets." ],
+        "mms" : [ "99101568103606236" ],
+        "series" : [ "Cooper, Jason, 1942- Science secrets.$$QScience secrets.", "Science secrets$$QScience secrets" ],
+        "contents" : [ "Water everywhere -- Sweet and salty -- Water to live -- Water rises -- And water falls -- Frozen water -- Too much or too little water -- Shaping the earth -- Water power." ],
+        "genre" : [ "Juvenile literature." ],
+        "place" : [ "Place of publication not identified]" ],
+        "version" : [ "1" ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "99101568103606236" ],
+        "recordid" : [ "alma99101568103606236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "2550000000059823" ],
+        "sourcesystem" : [ "DTAEXC" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.8917021749999999 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDAuthor" : [ "n2005039772" ],
+        "au" : [ "Cooper, Jason" ],
+        "seriesau" : [ "Cooper, Jason, 1942-" ],
+        "creatorfull" : [ "$$NCooper, Jason$$Rauthor" ],
+        "date" : [ "2003" ],
+        "isbn" : [ "1-61236-389-X", "1-58952-414-4" ],
+        "notes" : [ "Includes bibliographical references (page 24) and index." ],
+        "abstract" : [ "Explores water and it's secrets." ],
+        "cop" : [ "Place of publication not identified" ],
+        "pub" : [ "Rourke Publishing LLC" ],
+        "oclcid" : [ "(ckb)2550000000059823", "(ssid)ssj644604", "(pqkbmanifestationid)12220851", "(pqkbtitlecode)tc644604", "(pqkbworkid)10694434", "(pqkb)10853285", "(njhaci)992550000000059823" ],
+        "seriestitle" : [ "Science secrets" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water" ],
+        "author" : [ "Cooper, Jason Author" ],
+        "creationdate" : [ "2003" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9059668832981140991" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9959459313406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water " ],
+        "subject" : [ "Water-supply", "Water resources development", "Water quality" ],
+        "format" : [ "260 p. : ill. ; 24 cm." ],
+        "identifier" : [ "$$CLC$$V  2009022929;$$COCLC$$V(OCoLC)ocn317921744;$$COCLC$$V(OCoLC)317921744;$$CISBN$$V9780737745467 (hardcover);$$CISBN$$V9780737745474 (pbk.);$$CISBN$$V0737745460 (hardcover);$$CISBN$$V0737745479 (pbk.)" ],
+        "creationdate" : [ "c2010" ],
+        "lds05" : [ "Includes bibliographical references and index." ],
+        "publisher" : [ "Detroit Mich. : Greenhaven Press" ],
+        "description" : [ "Debates the issue of water resources." ],
+        "mms" : [ "9959459313406236" ],
+        "contributor" : [ "Langwith, Jacqueline.$$QLangwith, Jacqueline." ],
+        "series" : [ "Opposing viewpoints series$$QOpposing viewpoints series", "Opposing viewpoints series (Unnumbered)$$QOpposing viewpoints series (Unnumbered)" ],
+        "contents" : [ "What are the major issues affecting water resources? Global warming threatens massive sea level rise / James Hansen ; Sea levels will not rise because of global warming/ Nils-Axel Mörner, as told to Gregory Murphy ; Agriculture threatens water quality / Marc Ribaudo and Robert Johansson ; Agriculture can benefit the environment and water quality / American Farmland Trust ; Invasive species are a major threat to the Great Lakes / Andy Buchsbaum ; Not all invasive species are bad / Alan Burdick -- Is there a water crisis? Water scarcity is creating a global food crisis / Fred Pearce ; Water scarcity is exaggerated / Jonathan Chenoweth ; Armed conflicts will arise over water security / Alex Stonehill ; Armed conflicts will not arise over water scarcity / Andrew Biro ; Desalination is an important part of the solution to California's water crisis / Peter MacLaggan ; Desalination should not play a major role in helping to solve water problems / Phil Dickie -- How should water resources be managed? Transferring water from agricultural to urban use is beneficial / Robert Glennon ; The impacts of water transfer on rural communities must be considered / Tyler McMahon and Matthew Reuer ; Water privatization is a good idea / Fredrik Segerfeldt ; Water privatization is a bad idea / Wenonah Hauter ; The Great Lakes Compact is a success / Noah D. Hall ; The Great Lakes Compact is flawed / Mark S. Squillace -- Is drinking water safe? Fluoridation of public drinking water is beneficial / Brian Dunning ; Fluoridation of public drinking water is not beneficial and can be harmful / Donald W. Miller ; Bottled water is safe / International Bottled Water Association ; Bottled water may be harmful / Olga Naidenko ... [et al.]." ],
+        "place" : [ "Detroit Mich.] :" ],
+        "version" : [ "1" ],
+        "lds06" : [ "Jacqueline Langwith, book editor." ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9959459313406236" ],
+        "recordid" : [ "alma9959459313406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "5945931-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.89155875 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDContributor" : [ "n2007005695" ],
+        "aulast" : [ "Langwith" ],
+        "aufirst" : [ "Jacqueline." ],
+        "auinit" : [ "J" ],
+        "addau" : [ "Langwith, Jacqueline." ],
+        "contributorfull" : [ "$$NLangwith, Jacqueline.$$LLangwith$$FJacqueline.$$Rcontributor" ],
+        "date" : [ "2010", "c2010" ],
+        "isbn" : [ "9780737745467", "9780737745474", "0737745460", "0737745479" ],
+        "notes" : [ "Includes bibliographical references and index." ],
+        "abstract" : [ "Debates the issue of water resources." ],
+        "cop" : [ "Detroit [Mich" ],
+        "pub" : [ "Greenhaven Press" ],
+        "oclcid" : [ "(ocolc)317921744" ],
+        "lccn" : [ "2009022929" ],
+        "seriestitle" : [ "Opposing viewpoints series" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water /" ],
+        "author" : [ "Langwith, Jacqueline." ],
+        "creationdate" : [ "2010" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9075987545957516483" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/99101568303506236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water" ],
+        "subject" : [ "Water -- Juvenile literature", "Engineering & Applied Sciences", "Applied Physics" ],
+        "identifier" : [ "$$CISBN$$V1-59928-418-9;$$CISBN$$V1-59679-832-7" ],
+        "creationdate" : [ "2007" ],
+        "lds05" : [ "Bibliographic Level Mode of Issuance: Monograph", "English" ],
+        "creator" : [ "Murray, Julie Author$$QMurray, Julie" ],
+        "publisher" : [ "Place of publication not identified ABDO Pub" ],
+        "mms" : [ "99101568303506236" ],
+        "series" : [ "A buddy book. Water $$QA buddy book. Water " ],
+        "contents" : [ "A watery world -- Why is water important? -- The science of water -- The water cycle -- Real-life science -- Water through history -- Water in the world today." ],
+        "genre" : [ "Juvenile literature" ],
+        "place" : [ "Place of publication not identified]" ],
+        "version" : [ "1" ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "99101568303506236" ],
+        "recordid" : [ "alma99101568303506236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "2670000000129977" ],
+        "sourcesystem" : [ "PQNKB" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.89124925 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDAuthor" : [ "no2002097163" ],
+        "au" : [ "Murray, Julie" ],
+        "creatorfull" : [ "$$NMurray, Julie$$Rauthor" ],
+        "date" : [ "2007" ],
+        "isbn" : [ "1-59928-418-9", "1-59679-832-7" ],
+        "cop" : [ "Place of publication not identified" ],
+        "pub" : [ "ABDO Pub" ],
+        "oclcid" : [ "(ckb)2670000000129977", "(ssid)ssj694256", "(pqkbmanifestationid)12236775", "(pqkbtitlecode)tc694256", "(pqkbworkid)10666475", "(pqkb)11422506" ],
+        "seriestitle" : [ "A buddy book. Water" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water" ],
+        "author" : [ "Murray, Julie Author" ],
+        "creationdate" : [ "2007" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9027849858061669332" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9999482489206236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "journal" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water." ],
+        "subject" : [ "Water-supply -- Periodicals", "Water resources development -- Periodicals", "Water quality management -- Periodicals", "Freshwater ecology -- Periodicals", "Environmental policy -- Periodicals" ],
+        "identifier" : [ "$$CLC$$V  2011252930;$$COCLC$$V(OCoLC)463483308;$$CISSN$$V2073-4441" ],
+        "creationdate" : [ "2009" ],
+        "lds05" : [ "Refereed/Peer-reviewed", "Unrestricted online access" ],
+        "publisher" : [ "Basel, Switzerland : MDPI Pub.", "Began with vol. 1, issue 1 (2009)." ],
+        "mms" : [ "9999482489206236" ],
+        "contributor" : [ "Molecular Diversity Preservation International.$$QMolecular Diversity Preservation International." ],
+        "frequency" : [ "Quarterly" ],
+        "genre" : [ "Periodicals." ],
+        "place" : [ "Basel, Switzerland :" ],
+        "version" : [ "1" ],
+        "lds04" : [ "Began with vol. 1, issue 1 (2009)." ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9999482489206236" ],
+        "recordid" : [ "alma9999482489206236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "1000000000800433" ],
+        "sourcesystem" : [ "CKB" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.668633 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "stitle" : [ "WATER-SUI", "Water (Basel)" ],
+        "date" : [ "2009" ],
+        "issn" : [ "2073-4441" ],
+        "cop" : [ "Basel, Switzerland" ],
+        "pub" : [ "MDPI Pub." ],
+        "oclcid" : [ "(ocolc)463483308" ],
+        "lccn" : [ "2011252930" ],
+        "format" : [ "journal" ],
+        "genre" : [ "journal" ],
+        "ristype" : [ "JOUR" ],
+        "jtitle" : [ "Water." ],
+        "peerreview" : [ "true" ],
+        "openaccess" : [ "true" ]
+      },
+      "sort" : {
+        "title" : [ "Water." ],
+        "author" : [ "Molecular Diversity Preservation International." ],
+        "creationdate" : [ "2009" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9045777075636699870" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9943620433406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water " ],
+        "subject" : [ "Water -- Study and teaching (Middle school) -- Activity programs", "Water -- Study and teaching (Secondary) -- Activity programs", "Water -- Experiments" ],
+        "format" : [ "iv, 92 p. : ill. ; 28 cm." ],
+        "identifier" : [ "$$COCLC$$V(OCoLC)ocm40665733;$$CISBN$$V0825137586 (pbk.)" ],
+        "creationdate" : [ "1998" ],
+        "lds05" : [ "Includes URLs for Internet tie-ins." ],
+        "creator" : [ "Allen, Martin.$$QAllen, Martin." ],
+        "publisher" : [ "Portland, ME. : J. Weston Walch" ],
+        "description" : [ "Reproducible activities, correlated to the National Science Education Standards, that engage students' minds as they observe, examine & investigate the properties of water: from surface tension & density to salinity & buoyancy and much more." ],
+        "mms" : [ "9943620433406236" ],
+        "series" : [ "Hands-on science series. Physical science$$QHands-on science series. Physical science", "Walch Hands-on science series.$$QWalch Hands-on science series.", "Walch reproducible books$$QWalch reproducible books" ],
+        "place" : [ "Portland, ME. :" ],
+        "version" : [ "1" ],
+        "lds06" : [ "by Marty Allen ; illustrated by Lloyd Birmingham ; project editors: Joel Beller and Carl Raab." ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9943620433406236" ],
+        "recordid" : [ "alma9943620433406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "4362043-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.66834115 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDAuthor" : [ "n84163848" ],
+        "aulast" : [ "Allen" ],
+        "aufirst" : [ "Martin." ],
+        "auinit" : [ "M" ],
+        "au" : [ "Allen, Martin." ],
+        "creatorfull" : [ "$$NAllen, Martin.$$LAllen$$FMartin.$$Rauthor" ],
+        "date" : [ "1998" ],
+        "isbn" : [ "0825137586" ],
+        "notes" : [ "Includes URLs for Internet tie-ins." ],
+        "abstract" : [ "Reproducible activities, correlated to the National Science Education Standards, that engage students' minds as they observe, examine & investigate the properties of water: from surface tension & density to salinity & buoyancy and much more." ],
+        "cop" : [ "Portland, ME" ],
+        "pub" : [ "J. Weston Walch" ],
+        "oclcid" : [ "(ocolc)40665733" ],
+        "seriestitle" : [ "Hands-on science series. Physical science" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water /" ],
+        "author" : [ "Allen, Martin." ],
+        "creationdate" : [ "1998" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9011154624416563632" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9976802443406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "video" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water" ],
+        "subject" : [ "Citizenship -- Study and teaching -- Great Britain", "Water -- Management -- Kenya", "Water -- Study and teaching -- Activity programs", "Water -- Kenya" ],
+        "format" : [ "1 online resource (29 min.)." ],
+        "identifier" : [ "$$COCLC$$V(OCoLC)829688479" ],
+        "creationdate" : [ "2006" ],
+        "lds05" : [ "Title from resource description page (viewed Mar. 5, 2012).", "Previously released as DVD.", "Electronic reproduction. Alexandria, VA : Alexander Street Press, 2012. (Education in video). Available via World Wide Web.", "This edition in English." ],
+        "publisher" : [ "London : Teachers TV/UK Department of Education" ],
+        "description" : [ "The Ndichu family live in a small village in Kenya. Like most families in the countryside, they don't have running water. Sisters Margaret and Ruth have to walk to the local river three times a day to fetch enough water for the family to use. The water is full of chemicals from the surrounding cash crop farms and pollution from sewage, but it's the only water they can get. In a school in London, a Year 9 class are learning about water and are instructed to carry buckets of water round the playground. They're exhausted after just a few minutes, and empathise with the sisters in the film and the situation the family are in. They re spurred on to find out more about the complex issue of water, and the politics of water management and distribution world wide." ],
+        "mms" : [ "9976802443406236" ],
+        "contributor" : [ "Evans Woolfe (Firm)$$QEvans Woolfe (Firm)" ],
+        "series" : [ "Education in video$$QEducation in video", "Education in video.$$QEducation in video.", "KS3 citizenship ; 1$$QKS3 citizenship " ],
+        "genre" : [ "Instructional television programs." ],
+        "place" : [ "London] :" ],
+        "version" : [ "1" ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9976802443406236" ],
+        "recordid" : [ "alma9976802443406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "7680244-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.6683296750000001 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "date" : [ "2006" ],
+        "abstract" : [ "The Ndichu family live in a small village in Kenya. Like most families in the countryside, they don't have running water. Sisters Margaret and Ruth have to walk to the local river three times a day to fetch enough water for the family to use. The water is full of chemicals from the surrounding cash crop farms and pollution from sewage, but it's the only water they can get. In a school in London, a Year 9 class are learning about water and are instructed to carry buckets of water round the playground. They're exhausted after just a few minutes, and empathise with the sisters in the film and the situation the family are in. They re spurred on to find out more about the complex issue of water, and the politics of water management and distribution world wide." ],
+        "cop" : [ "London" ],
+        "pub" : [ "Teachers TV/UK Department of Education" ],
+        "oclcid" : [ "(ocolc)829688479" ],
+        "seriestitle" : [ "Education in video" ],
+        "format" : [ "book" ],
+        "genre" : [ "unknown" ],
+        "ristype" : [ "VIDEO" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water" ],
+        "author" : [ "Evans Woolfe (Firm)" ],
+        "creationdate" : [ "2006" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9046352352728747921" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9998528735306236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "video" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water." ],
+        "subject" : [ "Citizenship -- Study and teaching -- Great Britain", "Water -- Management -- Kenya", "Water -- Kenya", "Water -- Study and teaching -- Activity programs. " ],
+        "format" : [ "1 online resource (29 min.)." ],
+        "identifier" : [ "$$COCLC$$V(OCoLC)829688479" ],
+        "creationdate" : [ "2006" ],
+        "lds05" : [ "Title from resource description page (viewed Mar. 5, 2012).", "Previously released as DVD.", "In English.", "Original language in English." ],
+        "publisher" : [ "London : Teachers TV/UK Department of Education" ],
+        "description" : [ "The Ndichu family live in a small village in Kenya. Like most families in the countryside, they don't have running water. Sisters Margaret and Ruth have to walk to the local river three times a day to fetch enough water for the family to use. The water is full of chemicals from the surrounding cash crop farms and pollution from sewage, but it's the only water they can get. In a school in London, a Year 9 class are learning about water and are instructed to carry buckets of water round the playground. They're exhausted after just a few minutes, and empathise with the sisters in the film and the situation the family are in. They re spurred on to find out more about the complex issue of water, and the politics of water management and distribution world wide." ],
+        "mms" : [ "9998528735306236" ],
+        "contributor" : [ "Evans Woolfe (Firm)$$QEvans Woolfe (Firm)" ],
+        "series" : [ "Academic Video Online$$QAcademic Video Online", "KS3 citizenship ; 1$$QKS3 citizenship " ],
+        "genre" : [ "Instructional television programs." ],
+        "place" : [ "London] :" ],
+        "version" : [ "1" ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9998528735306236" ],
+        "recordid" : [ "alma9998528735306236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "994940000000167813" ],
+        "sourcesystem" : [ "NON_SFX" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.6683296750000001 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "date" : [ "2006" ],
+        "abstract" : [ "The Ndichu family live in a small village in Kenya. Like most families in the countryside, they don't have running water. Sisters Margaret and Ruth have to walk to the local river three times a day to fetch enough water for the family to use. The water is full of chemicals from the surrounding cash crop farms and pollution from sewage, but it's the only water they can get. In a school in London, a Year 9 class are learning about water and are instructed to carry buckets of water round the playground. They're exhausted after just a few minutes, and empathise with the sisters in the film and the situation the family are in. They re spurred on to find out more about the complex issue of water, and the politics of water management and distribution world wide." ],
+        "cop" : [ "London" ],
+        "pub" : [ "Teachers TV/UK Department of Education" ],
+        "oclcid" : [ "(ocolc)829688479" ],
+        "seriestitle" : [ "Academic Video Online" ],
+        "format" : [ "book" ],
+        "genre" : [ "unknown" ],
+        "ristype" : [ "VIDEO" ],
+        "btitle" : [ "Water." ]
+      },
+      "sort" : {
+        "title" : [ "Water." ],
+        "author" : [ "Evans Woolfe (Firm)" ],
+        "creationdate" : [ "2006" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9065591403714264333" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/9978851683406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water " ],
+        "subject" : [ "Change of state (Physics) -- Juvenile literature", "Change of state (Physics)" ],
+        "format" : [ "24 pages : color illustrations ; 21 x 26 cm." ],
+        "identifier" : [ "$$CLC$$V  2012046342;$$CISBN$$V9781617727368 (library binding);$$CISBN$$V1617727369 (library binding);$$COCLC$$V(OCoLC)ocn811006452;$$COCLC$$V(OCoLC)811006452" ],
+        "creationdate" : [ "2013" ],
+        "lds05" : [ "Includes bibliographical references (page 24) and index." ],
+        "lds14" : [ "7-12." ],
+        "creator" : [ "Lawrence, Ellen, 1967-$$QLawrence, Ellen" ],
+        "publisher" : [ "New York. New York : Bearport Pub." ],
+        "description" : [ "Simple text and color photos provide step-by-step instructions for experiments with water using the scientific method." ],
+        "mms" : [ "9978851683406236" ],
+        "series" : [ "Bearport science slam!$$QBearport science slam!", "Fun-damental experiments$$QFun-damental experiments", "Lawrence, Ellen, 1967- FUNdamental experiments.$$QFUNdamental experiments." ],
+        "contents" : [ "What happens to water when it freezes? -- How does water change when it gets warm? -- What happens to water vapor when it cools down? -- What dissolves in water? -- Is water sticky? -- Does water have a skin? -- Why does water stick to you? -- Discovery time! -- Water in your world." ],
+        "genre" : [ "Juvenile literature." ],
+        "place" : [ "New York. New York :" ],
+        "version" : [ "1" ],
+        "lds06" : [ "by Ellen Lawrence ; consultants: Suzy Gazlay, MA, Recipient, Presidential Award for Excellence in Science Teaching, Kimberly Brenneman, PhD, National Institute for Early Education Research, Rutgers University, New Brunswick, New Jersey." ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "9978851683406236" ],
+        "recordid" : [ "alma9978851683406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "7885168-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.668309325 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDAuthor" : [ "n2011076072" ],
+        "aulast" : [ "Lawrence" ],
+        "aufirst" : [ "Ellen" ],
+        "auinit" : [ "E" ],
+        "au" : [ "Lawrence, Ellen" ],
+        "seriesau" : [ "Lawrence, Ellen, 1967-" ],
+        "creatorfull" : [ "$$NLawrence, Ellen$$LLawrence$$FEllen$$Rauthor" ],
+        "date" : [ "2013" ],
+        "isbn" : [ "9781617727368", "1617727369" ],
+        "notes" : [ "Includes bibliographical references (page 24) and index." ],
+        "abstract" : [ "Simple text and color photos provide step-by-step instructions for experiments with water using the scientific method." ],
+        "cop" : [ "New York. New York" ],
+        "pub" : [ "Bearport Pub." ],
+        "oclcid" : [ "(ocolc)811006452" ],
+        "lccn" : [ "2012046342" ],
+        "seriestitle" : [ "Fun-damental experiments" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water /" ],
+        "author" : [ "Lawrence, Ellen, 1967-" ],
+        "creationdate" : [ "2013" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9004666613176797255" ]
+      }
+    }
+  }, {
+    "context" : "L",
+    "adaptor" : "Local Search Engine",
+    "@id" : "https://na04.alma.exlibrisgroup.com/primaws/rest/pub/pnxs/L/999785403406236",
+    "pnx" : {
+      "display" : {
+        "source" : [ "Alma" ],
+        "type" : [ "book" ],
+        "language" : [ "eng" ],
+        "title" : [ "Water " ],
+        "subject" : [ "Water" ],
+        "format" : [ "200 p. : ill. (part col.) col. maps ; 28 cm." ],
+        "identifier" : [ "$$CLC$$V   66018677 ;$$COCLC$$V(OCoLC)00712049" ],
+        "creationdate" : [ "1966" ],
+        "lds05" : [ "Bibliography: p. 196." ],
+        "creator" : [ "Leopold, Luna B. (Luna Bergere), 1915-2006.$$QLeopold, Luna B." ],
+        "publisher" : [ "New York, N.Y. : Time, inc." ],
+        "mms" : [ "999785403406236" ],
+        "contributor" : [ "Davis, Kenneth S. (Kenneth Sydney), 1912-1999, joint author.$$QDavis, Kenneth S." ],
+        "addtitle" : [ "Life (Chicago)" ],
+        "series" : [ "Life science library$$QLife science library" ],
+        "place" : [ "New York, N.Y. :" ],
+        "version" : [ "1" ],
+        "lds06" : [ "by Luna B. Leopold, Kenneth S. Davis, and the editors of Life." ]
+      },
+      "control" : {
+        "sourcerecordid" : [ "999785403406236" ],
+        "recordid" : [ "alma999785403406236" ],
+        "sourceid" : "alma",
+        "originalsourceid" : [ "978540-pittdb" ],
+        "sourcesystem" : [ "ILS" ],
+        "sourceformat" : [ "MARC21" ],
+        "score" : [ 0.44570565 ],
+        "isDedup" : false
+      },
+      "addata" : {
+        "originatingSystemIDAuthor" : [ "n50049889" ],
+        "originatingSystemIDContributor" : [ "n50035594" ],
+        "aulast" : [ "Leopold" ],
+        "aufirst" : [ "Luna B." ],
+        "auinit" : [ "L" ],
+        "au" : [ "Leopold, Luna B. (Luna Bergere)" ],
+        "addau" : [ "Davis, Kenneth S. (Kenneth Sydney)" ],
+        "creatorfull" : [ "$$NLeopold, Luna B. (Luna Bergere)$$LLeopold$$FLuna B.$$Rauthor" ],
+        "contributorfull" : [ "$$NDavis, Kenneth S. (Kenneth Sydney)$$LDavis$$FKenneth S.$$Rcontributor" ],
+        "date" : [ "1966" ],
+        "notes" : [ "Bibliography: p. 196." ],
+        "cop" : [ "New York, N.Y" ],
+        "pub" : [ "Time, inc." ],
+        "oclcid" : [ "(ocolc)712049" ],
+        "lccn" : [ "66018677" ],
+        "seriestitle" : [ "Life science library" ],
+        "format" : [ "book" ],
+        "genre" : [ "book" ],
+        "ristype" : [ "BOOK" ],
+        "btitle" : [ "Water" ]
+      },
+      "sort" : {
+        "title" : [ "Water /" ],
+        "author" : [ "Leopold, Luna B. (Luna Bergere), 1915-2006." ],
+        "creationdate" : [ "1966" ]
+      },
+      "facets" : {
+        "frbrtype" : [ "6" ],
+        "frbrgroupid" : [ "9043592533491586274" ]
+      }
+    }
+  } ],
+  "timelog" : {
+    "PC_SEARCH_CALL_TIME" : "1272",
+    "PC_BUILD_JSON_AND_HIGLIGHTS" : "129",
+    "PC_SEARCH_TIME_TOTAL" : "1401",
+    "BUILD_RESULTS_RETRIVE_FROM_DB" : "373",
+    "CALL_SOLR_GET_IDS_LIST" : "404",
+    "RETRIVE_FROM_DB_COURSE_INFO" : "2",
+    "RETRIVE_FROM_DB_RECORDS" : "355",
+    "RETRIVE_FROM_DB_RELATIONS" : "8",
+    "PRIMA_LOCAL_INFO_FACETS_BUILD_DOCS_HIGHLIGHTS" : "56",
+    "PRIMA_LOCAL_SEARCH_TOTAL" : "866",
+    "BUILD_BLEND_AND_CACHE_RESULTS" : 0,
+    "BUILD_COMBINED_RESULTS_MAP" : 1402,
+    "COMBINED_SEARCH_TIME" : 1411,
+    "PROCESS_COMBINED_RESULTS" : 0,
+    "FEATURED_SEARCH_TIME" : 0
+  }
+}

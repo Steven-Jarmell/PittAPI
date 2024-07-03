@@ -17,15 +17,13 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
 
+from __future__ import annotations
+
 import requests
-import re
-from typing import Any, Dict, List, Union
+from typing import Any
 
-from bs4 import BeautifulSoup
 
-BASE_URL = (
-    "https://www.laundryview.com/api/currentRoomData?school_desc_key=197&location={}"
-)
+BASE_URL = "https://www.laundryview.com/api/currentRoomData?school_desc_key=197&location={location}"
 
 LOCATION_LOOKUP = {
     "TOWERS": "2430136",
@@ -42,13 +40,13 @@ LOCATION_LOOKUP = {
 def _get_laundry_info(building_name: str) -> Any:
     """Returns JSON object of laundry view webpage"""
     building_name = building_name.upper()
-    url = BASE_URL.format(LOCATION_LOOKUP[building_name])
+    url = BASE_URL.format(location=LOCATION_LOOKUP[building_name])
     response = requests.get(url)
     info = response.json()
     return info
 
 
-def get_status_simple(building_name: str) -> Dict[str, str]:
+def get_status_simple(building_name: str) -> dict[str, str]:
     """
     :returns: a dictionary with free washers and dryers as well as total washers
               and dryers for given building
@@ -63,7 +61,7 @@ def get_status_simple(building_name: str) -> Dict[str, str]:
         -> SUTH_WEST
     """
     laundry_info = _get_laundry_info(building_name)
-    freeWashers, freeDryers, totalWashers, totalDryers = 0,0,0,0
+    freeWashers, freeDryers, totalWashers, totalDryers = 0, 0, 0, 0
 
     for obj in laundry_info["objects"]:
         if obj["type"] == "washFL":
@@ -92,7 +90,7 @@ def get_status_simple(building_name: str) -> Dict[str, str]:
     }
 
 
-def get_status_detailed(building_name: str) -> List[Dict[str, Union[str, int]]]:
+def get_status_detailed(building_name: str) -> list[dict[str, str | int]]:
     """
     :returns: A list of washers and dryers for the passed
               building location with their statuses

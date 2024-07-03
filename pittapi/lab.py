@@ -17,7 +17,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
 
-from typing import List, NamedTuple
+from typing import NamedTuple
 import requests
 from urllib.error import HTTPError
 
@@ -137,11 +137,11 @@ def get_one_lab_data(lab_name: str) -> Lab:
     )
 
 
-def get_all_labs_data() -> List[Lab]:
+def get_all_labs_data() -> list[Lab]:
     """Returns a list with status and amount of OS machines for all labs.
 
     Returns:
-        List[Lab]: A List object of Labs.
+        list[Lab]: A list of Labs.
     """
 
     all_lab_data = []
