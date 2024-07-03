@@ -110,15 +110,14 @@ def get_one_lab_data(lab_name: str) -> Lab:
     # In Use: 2
     # Out of Service Unknown (just going to use default condition to handle this)
     for computer_info in lab_data["state"].values():
-        match computer_info["up"]:
-            case 0:
-                off_computers += 1
-            case 1:
-                available_computers += 1
-            case 2:
-                in_use_computers += 1
-            case _:
-                out_of_service_computers += 1
+        if computer_info["up"] == 0:
+            off_computers += 1
+        elif computer_info["up"] == 1:
+            available_computers += 1
+        elif computer_info["up"] == 2:
+            in_use_computers += 2
+        else:
+            out_of_service_computers += 1
 
     return Lab(
         name,
