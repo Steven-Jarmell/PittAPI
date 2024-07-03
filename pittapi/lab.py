@@ -115,7 +115,7 @@ def get_one_lab_data(lab_name: str) -> Lab:
         elif computer_info["up"] == 1:
             available_computers += 1
         elif computer_info["up"] == 2:
-            in_use_computers += 2
+            in_use_computers += 1
         else:
             out_of_service_computers += 1
 
