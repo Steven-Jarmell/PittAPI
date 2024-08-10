@@ -38,17 +38,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_bellefield_data,
         )
 
-        results = lab.get_one_lab_data("BELLEFIELD")
+        result = lab.get_one_lab_data("BELLEFIELD")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "Bellefield 314")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 29)
-        self.assertEqual(results.off_computers, 1)
-        self.assertEqual(results.in_use_computers, 0)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 30)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="Bellefield 314",
+                status=False,
+                available_computers=29,
+                off_computers=1,
+                in_use_computers=0,
+                out_of_service_computers=0,
+                total_computers=30,
+            ),
+        )
 
     @responses.activate
     def test_get_status_lawrence(self):
@@ -58,17 +62,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_lawrence_data,
         )
 
-        results = lab.get_one_lab_data("LAWRENCE")
+        result = lab.get_one_lab_data("LAWRENCE")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "David Lawrence 230")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 25)
-        self.assertEqual(results.off_computers, 10)
-        self.assertEqual(results.in_use_computers, 5)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 40)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="David Lawrence 230",
+                status=False,
+                available_computers=25,
+                off_computers=10,
+                in_use_computers=5,
+                out_of_service_computers=0,
+                total_computers=40,
+            ),
+        )
 
     @responses.activate
     def test_get_status_sutherland(self):
@@ -78,17 +86,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_sutherland_data,
         )
 
-        results = lab.get_one_lab_data("SUTH")
+        result = lab.get_one_lab_data("SUTH")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "Sutherland 120")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 11)
-        self.assertEqual(results.off_computers, 1)
-        self.assertEqual(results.in_use_computers, 0)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 12)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="Sutherland 120",
+                status=False,
+                available_computers=11,
+                off_computers=1,
+                in_use_computers=0,
+                out_of_service_computers=0,
+                total_computers=12,
+            ),
+        )
 
     @responses.activate
     def test_get_status_cathg27(self):
@@ -98,17 +110,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_cathy_g27_data,
         )
 
-        results = lab.get_one_lab_data("CATH_G27")
+        result = lab.get_one_lab_data("CATH_G27")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "Cathedral G27")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 16)
-        self.assertEqual(results.off_computers, 3)
-        self.assertEqual(results.in_use_computers, 11)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 30)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="Cathedral G27",
+                status=False,
+                available_computers=16,
+                off_computers=3,
+                in_use_computers=11,
+                out_of_service_computers=0,
+                total_computers=30,
+            ),
+        )
 
     @responses.activate
     def test_get_status_cathg62(self):
@@ -118,17 +134,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_cathy_g62_data,
         )
 
-        results = lab.get_one_lab_data("CATH_G62")
+        result = lab.get_one_lab_data("CATH_G62")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "Cathedral G62")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 26)
-        self.assertEqual(results.off_computers, 5)
-        self.assertEqual(results.in_use_computers, 0)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 31)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="Cathedral G62",
+                status=False,
+                available_computers=26,
+                off_computers=5,
+                in_use_computers=0,
+                out_of_service_computers=0,
+                total_computers=31,
+            ),
+        )
 
     @responses.activate
     def test_get_status_benedum(self):
@@ -138,17 +158,21 @@ class LabTest(unittest.TestCase):
             json=lab_mocks.mocked_benedum_data,
         )
 
-        results = lab.get_one_lab_data("BENEDUM")
+        result = lab.get_one_lab_data("BENEDUM")
 
-        self.assertIsInstance(results, lab.Lab)
-
-        self.assertEqual(results.name, "Benedum B06")
-        self.assertEqual(results.status, False)
-        self.assertEqual(results.available_computers, 28)
-        self.assertEqual(results.off_computers, 7)
-        self.assertEqual(results.in_use_computers, 4)
-        self.assertEqual(results.out_of_service_computers, 0)
-        self.assertEqual(results.total_computers, 39)
+        self.assertIsInstance(result, lab.Lab)
+        self.assertEqual(
+            result,
+            lab.Lab(
+                name="Benedum B06",
+                status=False,
+                available_computers=28,
+                off_computers=7,
+                in_use_computers=4,
+                out_of_service_computers=0,
+                total_computers=39,
+            ),
+        )
 
     @responses.activate
     def test_get_all_lab_data(self):

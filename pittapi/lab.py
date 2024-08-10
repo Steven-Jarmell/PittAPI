@@ -19,7 +19,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 from typing import NamedTuple
 import requests
-from urllib.error import HTTPError
 
 # Suppress ssl warning
 import urllib3
@@ -71,17 +70,10 @@ def get_one_lab_data(lab_name: str) -> Lab:
         Lab: A Lab object with the data.
     """
 
-    valid_lab_names = [
-        "BELLEFIELD",
-        "LAWRENCE",
-        "SUTH",
-        "CATH_G27",
-        "CATH_G62",
-        "BENEDUM",
-    ]
-
-    if lab_name not in valid_lab_names:
-        raise ValueError(f"Invalid lab name: {lab_name}. Valid options: {', '.join(valid_lab_names)}")
+    if lab_name not in AVAIL_LAB_ID_MAP.keys():
+        # Dicts are guaranteed to preserve insertion order as of Python 3.7,
+        # so the list of valid options will always be printed in the same order
+        raise ValueError(f"Invalid lab name: {lab_name}. Valid options: {', '.join(AVAIL_LAB_ID_MAP.keys())}")
 
     req = requests.get(
         PITT_BASE_URL + AVAIL_LAB_ID_MAP[lab_name] + "/status.json?noredir=1",
@@ -109,6 +101,7 @@ def get_one_lab_data(lab_name: str) -> Lab:
     # Available: 1
     # In Use: 2
     # Out of Service Unknown (just going to use default condition to handle this)
+    # TODO: find out status number for Out of Service
     for computer_info in lab_data["state"].values():
         if computer_info["up"] == 0:
             off_computers += 1
@@ -137,9 +130,6 @@ def get_all_labs_data() -> list[Lab]:
         list[Lab]: A list of Labs.
     """
 
-    all_lab_data = []
-
-    for lab_name in AVAIL_LAB_ID_MAP.keys():
-        all_lab_data.append(get_one_lab_data(lab_name))
+    all_lab_data = [get_one_lab_data(lab_name) for lab_name in AVAIL_LAB_ID_MAP.keys()]
 
     return all_lab_data
