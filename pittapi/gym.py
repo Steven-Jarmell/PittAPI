@@ -39,16 +39,16 @@ GYM_NAMES = [
 
 class Gym(NamedTuple):
     name: str
-    last_updated: str | None
-    current_count: int | None
-    percent_full: int | None
+    last_updated: str | None = None
+    current_count: int | None = None
+    percent_full: int | None = None
 
     @classmethod
     def from_text(cls, text: str) -> Gym:
         info = text.split("|")
         name = info[0]
         if len(info) < 4:
-            return cls(name=name, last_updated=None, current_count=None, percent_full=None)
+            return cls(name=name)
         count = int(info[2][12:])
         date_time = info[3][9:]
         try:

@@ -22,7 +22,7 @@ class GymTest(unittest.TestCase):
                 current_count=50,
                 percent_full=0,
             ),
-            gym.Gym(name="Bellefield Hall: Court & Dance Studio", last_updated=None, current_count=None, percent_full=None),
+            gym.Gym(name="Bellefield Hall: Court & Dance Studio"),
             gym.Gym(name="Trees Hall: Fitness Center", last_updated="07/09/2024 09:05 AM", current_count=70, percent_full=58),
             gym.Gym(name="Trees Hall: Courts", last_updated="07/09/2024 09:05 AM", current_count=20, percent_full=33),
             gym.Gym(
