@@ -21,7 +21,9 @@ from __future__ import annotations
 
 import re
 import requests
-from typing import NamedTuple
+from typing import NamedTuple, Any
+
+JSON = dict[str, Any]
 
 # https://pitcsprd.csps.pitt.edu/psc/pitcsprd/EMPLOYEE/SA/s/WEBLIB_HCX_CM.H_CLASS_SEARCH.FieldFormula.IScript_ClassSearch?institution=UPITT&term=2244&date_from=&date_thru=&subject=CS&subject_like=&catalog_nbr=&time_range=&days=&campus=PIT&location=&x_acad_career=UGRD&acad_group=&rqmnt_designtn=&instruction_mode=&keyword=&class_nbr=&acad_org=&enrl_stat=O&crse_attr=&crse_attr_value=&instructor_name=&instr_first_name=&session_code=&units=&trigger_search=&page=1
 SUBJECTS_API = (
@@ -358,30 +360,32 @@ def _validate_course(course: str | int) -> str:
 
 
 # peoplesoft api calls
-def _get_subjects() -> dict:
-    return requests.get(SUBJECTS_API).json()
+def _get_subjects() -> JSON:
+    response: JSON = requests.get(SUBJECTS_API).json()
+    return response
 
 
-def _get_subject_courses(subject: str) -> dict:
-    return requests.get(SUBJECT_COURSES_API.format(subject=subject)).json()
+def _get_subject_courses(subject: str) -> JSON:
+    response: JSON = requests.get(SUBJECT_COURSES_API.format(subject=subject)).json()
+    return response
 
 
-def _get_course_info(course_id: str) -> dict:
-    response = requests.get(COURSE_DETAIL_API.format(id=course_id)).json()
+def _get_course_info(course_id: str) -> JSON:
+    response: JSON = requests.get(COURSE_DETAIL_API.format(id=course_id)).json()
     if response["course_details"] == {}:
         raise ValueError("Invalid course ID; course with that ID does not exist")
     return response
 
 
-def _get_course_sections(course_id: str, term: str) -> dict:
-    response = requests.get(COURSE_SECTIONS_API.format(id=course_id, term=term)).json()
+def _get_course_sections(course_id: str, term: str) -> JSON:
+    response: JSON = requests.get(COURSE_SECTIONS_API.format(id=course_id, term=term)).json()
     if len(response["sections"]) == 0:
         raise ValueError("Invalid course ID; course with that ID does not exist")
     return response
 
 
-def _get_section_details(term: str, section_id: str) -> dict:
-    response = requests.get(SECTION_DETAILS_API.format(term=term, id=section_id)).json()
+def _get_section_details(term: str | int, section_id: str | int) -> JSON:
+    response: JSON = requests.get(SECTION_DETAILS_API.format(term=term, id=section_id)).json()
     if "error" in response:
         raise ValueError("Invalid section ID; section with that ID does not exist")
     return response
@@ -396,7 +400,7 @@ def _get_subject_codes() -> list[str]:
     return codes
 
 
-def _get_internal_id_dict(subject: str) -> dict:
+def _get_internal_id_dict(subject: str) -> dict[str, str]:
     response = _get_subject_courses(subject)
     internal_id_dict = {}
     for course in response["courses"]:
