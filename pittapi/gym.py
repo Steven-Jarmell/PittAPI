@@ -39,24 +39,24 @@ GYM_NAMES = [
 
 class Gym(NamedTuple):
     name: str
-    date: str
-    count: int
-    percentage: int
+    last_updated: str | None = None
+    current_count: int | None = None
+    percent_full: int | None = None
 
     @classmethod
     def from_text(cls, text: str) -> Gym:
         info = text.split("|")
         name = info[0]
         if len(info) < 4:
-            return cls(name=name, date=None, count=None, percentage=None)
+            return cls(name=name)
         count = int(info[2][12:])
-        date = info[3][9:]
+        date_time = info[3][9:]
         try:
             percentage = int(info[4].rstrip("%"))
         except ValueError:
             percentage = 0
 
-        return cls(name=name, date=date, count=count, percentage=percentage)
+        return cls(name=name, last_updated=date_time, current_count=count, percent_full=percentage)
 
 
 def get_all_gyms_info() -> list[Gym]:
@@ -71,7 +71,6 @@ def get_all_gyms_info() -> list[Gym]:
     soup = BeautifulSoup(page.text, "html.parser")
     gym_info_list = soup.find_all("div", class_="barChart")
 
-    # Iterate through list and add to dictionary
     gyms = [Gym.from_text(gym.get_text("|", strip=True)) for gym in gym_info_list]
     return gyms
 
@@ -81,6 +80,6 @@ def get_gym_info(gym_name: str) -> Gym | None:
     info = get_all_gyms_info()
     if gym_name in GYM_NAMES:
         for gym in info:
-            if gym.name == gym_name and gym.date and gym.count and gym.percentage:
+            if gym.name == gym_name and gym.last_updated and gym.current_count and gym.percent_full:
                 return gym
     return None
