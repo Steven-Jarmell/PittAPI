@@ -52,7 +52,7 @@ class Lab(NamedTuple):
 class LabAPIError(Exception):
     """Raised when an error occurs while accessing the Lab API."""
 
-    def __init__(self, message):
+    def __init__(self, message: str):
         super().__init__(message)
 
 
