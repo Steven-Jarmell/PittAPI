@@ -21,6 +21,8 @@ import requests
 from typing import Any
 
 
+JSON = dict[str, Any]
+
 API_KEY = "8882812681"
 VEHICLE_POINTS_URL = "http://www.pittshuttle.com/Services/JSONPRelay.svc/GetMapVehiclePoints"
 ARRIVAL_TIMES_URL = "http://www.pittshuttle.com/Services/JSONPRelay.svc/GetRouteStopArrivals"
@@ -30,29 +32,33 @@ ROUTES_URL = "http://www.pittshuttle.com/Services/JSONPRelay.svc/GetRoutesForMap
 sess = requests.session()
 
 
-def get_map_vehicle_points(api_key: str = API_KEY) -> dict[str, Any]:
+def get_map_vehicle_points(api_key: str = API_KEY) -> JSON:
     """Return the map location for all active vehicles."""
     payload = {"ApiKey": api_key}
     response = sess.get(VEHICLE_POINTS_URL, params=payload)
-    return response.json()
+    response_json: JSON = response.json()
+    return response_json
 
 
-def get_route_stop_arrivals(api_key: str = API_KEY, times_per_stop: int = 1) -> dict[str, Any]:
+def get_route_stop_arrivals(api_key: str = API_KEY, times_per_stop: int = 1) -> JSON:
     """Return stop arrival times for all vehicles."""
-    payload = {"ApiKey": api_key, "TimesPerStopString": times_per_stop}
+    payload = {"ApiKey": api_key, "TimesPerStopString": str(times_per_stop)}
     response = sess.get(ARRIVAL_TIMES_URL, params=payload)
-    return response.json()
+    response_json: JSON = response.json()
+    return response_json
 
 
-def get_vehicle_route_stop_estimates(vehicle_id: str, quantity: int = 2) -> dict[str, Any]:
+def get_vehicle_route_stop_estimates(vehicle_id: str, quantity: int = 2) -> JSON:
     """Return {quantity} stop estimates for all active vehicles."""
     payload = {"vehicleIdStrings": vehicle_id, "quantity": str(quantity)}
     response = sess.get(STOP_ESTIMATES_URL, params=payload)
-    return response.json()
+    response_json: JSON = response.json()
+    return response_json
 
 
-def get_routes(api_key: str = API_KEY) -> dict[str, Any]:
+def get_routes(api_key: str = API_KEY) -> JSON:
     """Return the routes with Vehicle Route Name, Vehicle ID, and all stops, etc."""
     payload = {"ApiKey": api_key}
     response = sess.get(ROUTES_URL, params=payload)
-    return response.json()
+    response_json: JSON = response.json()
+    return response_json
